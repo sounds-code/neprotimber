@@ -1,0 +1,1009 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+    {
+        id: "timber-by-species",
+        name: "Timber Species",
+        desc: "Natural timber sorted by species — choose the right wood for your project",
+        items: [
+            { name: "Cypress", desc: "Lightweight and durable. Ideal for roofing, framing, furniture and interior work. One of Kenya's most versatile timbers.", price: "Call for Price", image: "/images/cypress.jpg", specs: ["Softwood", "Durable", "Roofing"] },
+            { name: "Pine", desc: "Versatile softwood perfect for furniture, joinery, roofing and general construction. Smooth grain, easy to work with.", price: "Call for Price", image: "/images/pine.jpg", specs: ["Softwood", "Versatile", "Joinery"] },
+            { name: "Blue Gum", desc: "Hard and strong eucalyptus timber. Great for heavy structural use, poles and outdoor applications.", price: "Call for Price", image: "/images/bluegum.jpg", specs: ["Hardwood", "Strong", "Structural"] },
+            { name: "Mukima", desc: "Dense hardwood prized for heavy construction, heavy-duty furniture and specialty work. Long lasting.", price: "Call for Price", image: "/images/mukima.jpg", specs: ["Hardwood", "Heavy-duty", "Premium"] },
+        ]
+    },
+    {
+        id: "roofing-finishing",
+        name: "Roofing",
+        desc: "Everything you need from structural roof support to clean finishing edges",
+        theme: "light",
+        items: [
+            {
+                name: "2×2 Brandering & Support",
+                desc: "The professional choice for interior ceiling brandering (supporting gypsum or PVC ceilings). Our 2x2s are straight-cut to ensure your ceilings and light roofing structures remain perfectly level without 'waving'.",
+                price: "Call for Price",
+                image: "/images/2by2.jpeg",
+                specs: ["2x2", "Ceiling", "Support"],
+                subtitle: "Ideal for Ceilings & Light Roofing",
+            },
+            {
+                name: "3×2 The Standard Rafter",
+                desc: "The construction 'workhorse'. Ideal for main roof rafters, purlins, and wall plates in residential buildings. Its strength also makes it excellent for sturdy scaffolding and temporary site structures.",
+                price: "Call for Price",
+                image: "/images/3by2.jpeg",
+                specs: ["3x2", "Rafter", "Structural"],
+                subtitle: "Versatile Structural Support"
+            },
+            {
+                name: "4×2 Structural Trusses",
+                desc: "Built for strength. These are the primary timbers for heavy-duty roofing trusses, floor joists, and main structural frames. This is the timber that carries the weight of iron sheets or tiles over large spans.",
+                price: "Call for Price",
+                image: "/images/4by2.jpeg",
+                specs: ["4x2", "Truss", "Load-bearing"],
+                subtitle: "Heavy-Duty Load Bearing"
+            },
+            {
+                name: "6×2 Principal Rafters",
+                desc: "Extra-heavy structural timber for large-scale trusses and commercial roof spans. Essential for supporting heavy roofing tiles and creating solid floor joists.",
+                price: "Call for Price",
+                image: "/images/6by2.jpeg",
+                specs: ["6x2", "Heavy", "Commercial"],
+                subtitle: "For Massive Spans & Tile Roofing"
+            }
+        ]
+    },
+    {
+        id: "facial-boards-finishing",
+        name: "Facial Boards & Finishing",
+        desc: "Precision-cut boards for roof edges and eaves, providing a clean, professional look and weather protection.",
+        theme: "light",
+        items: [
+            {
+                name: "8×1 Facial Boards",
+                desc: "Kenya's standard size for roof finishing. These boards provide a clean edge for eaves and fascia applications. Available in durable Cypress for long-lasting protection.",
+                price: "Call for Price",
+                image: "/images/8by1.jpeg",
+                specs: ["8x1", "Fascia", "Standard"],
+                subtitle: "Standard Roof Finishing"
+            },
+            {
+                name: "10×1 Heavy Facial Boards",
+                desc: "Wider, heavy-duty boards for larger roof spans and commercial buildings. Provides a bold, premium finish while protecting the roof structure from the elements.",
+                price: "Call for Price",
+                image: "/images/10by1.png",
+                specs: ["10x1", "Wide", "Premium"],
+                subtitle: "Premium Wide Finishing"
+            }
+        ]
+    },
+    {
+        id: "machined-products",
+        name: "Machined Products",
+        desc: "Precision machined timber products for finishing and specialty applications",
+        items: [
+            {
+                name: "T&G — Tongue & Groove",
+                desc: "Interlocking tongue and groove boards for ceilings, wall paneling and flooring. Clean professional finish with precision machine cutting for seamless joints.",
+                price: "Call for Price",
+                image:"/images/T&G.jpeg",
+                specs: ["Interlocking", "Interior", "Finishing"],
+                subtitle: "Professional Ceiling & Wall Solution"
+            },
+            {
+                name: "Standard Door Frames",
+                desc: "Precision-machined and rebated door frames. Heavy-duty construction designed to support both flush and solid timber doors while ensuring a perfect, warp-free fit for your entryways.",
+                price: "Call for Price",
+                image: "/images/frames.png",
+                specs: ["Door", "Machined", "Heavy-duty"],
+                subtitle: "Structural & Finishing Grade"
+            },
+            {
+                name: "Quarter Round ",
+                desc: "Classic quarter round trim for finishing inside corners, baseboards, and transitions. Perfect for hiding gaps and creating clean, professional edges. Available in multiple profiles.",
+                price: "Call for Price",
+                image: "/images/quaterRound.jpeg",
+                specs: ["Molding", "Corner", "Trim"],
+                subtitle: "Inside Corner Finishing"
+            },
+            {
+                name: "Corner Blocks ",
+                desc: "Decorative corner blocks and architrave moldings for door and window surrounds. Machine-cut profiles add architectural detail and premium finishing touches to any entryway.",
+                price: "Call for Price",
+                image: "/images/coners.png",
+                specs: ["Corners", "Decorative", "Architectural"],
+                subtitle: "Premium Door & Window Trim"
+            },
+            {
+                name: "Picture Rail",
+                desc: "Functional picture rails for hanging artwork and chair rails for wall protection. Precision-machined profiles with elegant curves. Adds both style and practical protection to interior walls.",
+                price: "Call for Price",
+                image: "/images/pictureLine.png",
+                specs: ["Picture Rail", "Wall Protection", "Decorative"],
+                subtitle: "Elegant Wall Finisher"
+            },
+        ]
+    },
+    {
+        id: "doors",
+        name: "Doors",
+        desc: "Quality doors for residential and commercial use",
+        theme: "light",
+        items: [
+            { name: "Flush Doors", desc: "Smooth flat surface doors. Available in various sizes and thicknesses for interior and exterior use.", price: "Call for Price", image: "/images/flushdoors.jpeg", specs: ["Flush", "Smooth", "Versatile"] },
+            { name: "Skin Doors", desc: "Lightweight skin doors ideal for interior use. Cost effective and widely used in residential construction.", price: "Call for Price", image:"/images/skindoors.jpeg", specs: ["Lightweight", "Interior", "Economic"] },
+        ]
+    },
+    {
+        id: "byproducts",
+        name: "By-products",
+        desc: "Useful timber by-products available in bulk — great value for farms and industry",
+        items: [
+            { name: "Sawdust", desc: "Fine sawdust available in bags or bulk. Great for animal bedding, composting and poultry farms.", price: "Call for Price", image: "/images/sawdust.png", specs: ["Sawdust", "Bulk", "Byproduct"] },
+            { name: "Wood Shavings", desc: "Clean wood shavings in bulk. Ideal for poultry farms, animal bedding and garden mulch.", price: "Call for Price", image: "/images/woodshavings.png", specs: ["Shavings", "Bulk", "Bedding"] },
+            { name: "Timber Poles", desc: "Timber offcuts and bolls available in bulk. Good for low-cost construction and firewood.", price: "Call for Price", image:  "/images/polls.jpeg", specs: ["Poles", "Offcuts", "Economic"] },
+            { name: "Firewood", desc: "Dry hardwood firewood sold by the bundle or lorry load. Fast burning, high heat output.", price: "Call for Price", image: "/images/firewood.jpeg", specs: ["Firewood", "Dry", "Bulk"] },
+        ]
+    },
+    {
+        id: "iron-sheets",
+        name: "Roofing Sheets",
+        desc: "Premium roofing solutions with multiple profiles, gauges, and color options for every project.",
+        theme: "hardware",
+        isHardwareStart: true,
+        items: [
+            { name: "Box Profile Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/boxprofile.png", specs: ["Box Profile", "Colors", "2M-3M"] },
+            { name: "Corrugated GCI",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/Corrugated.png", specs: ["Corrugated", "Colors", "2M-3M"] },
+            { name: "Translucent Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/translucent.png", specs: ["Translucent", "Clear", "2M-3M"] },
+            { name: "Tile Profile Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/tileprofile.png", specs: ["Tile Profile", "Colors", "32G-30G"] },
+            { name: "Stone Coated Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/stonecoated.png", specs: ["Stone Coated", "Colors", "32G-30G"] },
+            { name: "Galvanized Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/galvanised.png", specs: ["Galvanized", "Colors", "32G-30G"] },
+            { name: "Aluzinc (Alu-Zinc) Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details.", price: "Call for Price", image: "/images/aluzinc .png", specs: ["Aluzinc", "Colors", "32G-30G"] },
+            { name: "Color-Coated Sheets",
+                desc: "Available in various colors, starting from 2M to 3M, and from 32G to 30G. WhatsApp or call us for more details .", price: "Call for Price", image: "/images/colorcoated.png", specs: ["Color-Coated", "Colors", "32G-30G"] },
+        ]
+    },
+    {
+        id: "cement-blocks",
+        name: "Cement & Masonry",
+        desc: "High-quality building materials for foundations, walls, and platforming.",
+        theme: "hardware",
+        items: [
+            { name: "Bamburi Cement", desc: "Tembo and Nguvu brands available. Reliable strength for all structural and finishing works.", price: "Call for Price", image: "/images/bamburi.png", specs: ["Bamburi", "Cement", "Structural"] },
+            { name: "Simba Cement", desc: "Excellent workability for masonry and plastering applications.", price: "Call for Price", image: "/images/simba.png", specs: ["Mombasa", "Cement", "Masonry"] },
+            { name: "BlueTriangle Cement", desc: "Engineered for ultimate durability and high early strength, it is the preferred choice for heavy structural works.", price: "Call for Price", image: "/images/bluetriangle.png", specs: ["Mombasa", "Cement", "Masonry"] },
+            { name: "Nyumba Cement", desc: "A premium Portland Pozzolanic cement known for its excellent workability and long-term strength in diverse environmental conditions.", price: "Call for Price", image: "/images/nyumba.png", specs: ["Mombasa", "Cement", "Masonry"] },
+
+        ]
+    },
+    {
+        id: "general-hardware",
+        name: "General Hardware",
+        desc: "Nails, screws, and essential fastening tools for every construction stage.",
+        theme: "hardware",
+        items: [
+            { name: "Construction Nails", desc: "Assorted sizes from 1 inch to 6 inches. Available in bulk or per kg.", price: "Call for Price",
+                image: "/images/construction_nails.png", specs: ["Nails", "Assorted", "Bulk"] },
+
+            { name: "Roofing Nails", desc: "Umbrella-headed roofing nails with washers for leak-proof sheet installation.", price: "Call for Price",
+                image: "/images/roofing nails.png", specs: ["Roofing", "Nails", "Washers"] },
+
+            { name: "Wood Glue & Fillers", desc: "High-strength Ponal and local brands for joinery and furniture repair.", price: "Call for Price",
+                image: "/images/woodglue.png", specs: ["Glue", "Filler", "Joinery"] },
+
+            { name: "Paint & Thinner", desc: "Undercoats, gloss, and emulsion paints for all your finishing needs.Available in different colors and sizes.", price: "Call for Price",
+                image: "/images/duracoat.png", specs: ["Paint", "Thinner", "Finishing"] },
+        ]
+    },
+];
+---
+
+<Layout title="Products | Nepro Timbers & Hardware">
+    <!-- NEW HERO - about-hero style -->
+    <section class="about-hero">
+        <div class="container hero-flex">
+            <h1 class="script-title">Timber & Hardware</h1>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span aria-hidden="true">»</span>
+                <span class="current-page">Products</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Timber Header -->
+    <div class="section-divider timber-divider animate-on-scroll">
+        <div class="container">
+            <h2 class="slide-right-to-left">Timber Collection</h2>
+            <div class="animated-line timber-line"></div>
+        </div>
+    </div>
+
+    {categories.map((cat, ci) => (
+            <>
+                {cat.isHardwareStart && (
+                        <div class="hardware-3d-trigger animate-on-scroll">
+                            <div class="section-divider hardware-divider">
+                                <div class="container">
+                                    <h2 class="slide-right-to-left">Construction Hardware</h2>
+                                    <div class="animated-line hardware-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                )}
+                <section class={`category-section ${cat.theme === 'light' ? 'light-theme' : cat.theme === 'hardware' ? 'hardware-theme' : ci % 2 === 1 ? 'alt' : ''} ${cat.isHardwareStart ? 'hardware-reveal-3d' : ''}`} id={cat.id}>
+                    <div class="container">
+                        <div class="category-header stagger-in">
+                            <span class="label">{cat.name.toUpperCase()}</span>
+                            <h2>{cat.name}</h2>
+                            <p class="cat-desc">{cat.desc}</p>
+                        </div>
+                        <div class="products-grid stagger-in">
+                            {cat.items.map(item => {
+                                return (
+                                        <div class="product-card">
+                                            <div class="product-img-wrapper">
+                                                {item.image ? (
+                                                        <div class="product-img">
+                                                            <img
+                                                                    src={item.image}
+                                                                    alt={item.name}
+                                                                    class="product-photo"
+                                                                    data-lightbox={item.image}
+                                                                    data-product={item.name}
+                                                                    loading="lazy"
+                                                                    decoding="async"
+                                                            />
+                                                            <button class="view-btn" data-lightbox={item.image} data-product={item.name} aria-label="View full image">
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                                    <path d="m21 21-4.35-4.35"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                ) : (
+                                                        <div class="product-img">
+                                                            <div class="product-img-placeholder">No Image</div>
+                                                        </div>
+                                                )}
+                                            </div>
+                                            {item.specs && item.specs.length > 0 && (
+                                                    <div class="specs-badges">
+                                                        {item.specs.map(spec => (
+                                                                <span class="spec-badge">{spec}</span>
+                                                        ))}
+                                                    </div>
+                                            )}
+                                            <div class="product-info">
+                                                <h3>{item.name}</h3>
+                                                <p>{item.desc}</p>
+                                                <div class="product-footer">
+                                                    <span class="price">{item.price}</span>
+                                                    <a
+                                                            href={`https://wa.me/254712593434?text=Hi Nepro Timbers, I'm interested in ${item.name}`}
+                                                            target="_blank"
+                                                            class="btn-enquire"
+                                                    >
+                                                        WhatsApp
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
+            </>
+    ))}
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">✕</button>
+            <img id="lightbox-image" src="" alt="Product Image" class="lightbox-image" />
+            <div class="lightbox-info">
+                <p id="lightbox-product-name"></p>
+            </div>
+        </div>
+        <div class="lightbox-backdrop"></div>
+    </div>
+
+    <section class="products-cta">
+        <div class="container">
+            <h2>Can't find what you need?</h2>
+            <p>We stock more than what's listed, from plumbing pipes to electrical fittings. Call or WhatsApp us and we'll sort you out.</p>
+            <a href="https://wa.me/254712593434?text=Hi Nepro Timbers, I need help finding a product" target="_blank" class="btn-whatsapp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.85L.057 23.5l5.797-1.524A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.886 9.886 0 01-5.031-1.378l-.36-.214-3.742.981.999-3.648-.235-.374A9.861 9.861 0 012.106 12C2.106 6.535 6.535 2.106 12 2.106c5.466 0 9.894 4.429 9.894 9.894 0 5.466-4.428 9.894-9.894 9.894z"/>
+                </svg>
+                WhatsApp Us Now
+            </a>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    (entry.target as HTMLElement).classList.add('reveal-active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll, .stagger-in, .hardware-3d-trigger').forEach(el => {
+            observer.observe(el as HTMLElement);
+        });
+
+        const modal = document.getElementById('lightbox-modal') as HTMLElement;
+        const modalImg = document.getElementById('lightbox-image') as HTMLImageElement;
+        const modalName = document.getElementById('lightbox-product-name') as HTMLElement;
+        const closeBtn = document.getElementById('lightbox-close') as HTMLElement;
+        const backdrop = document.querySelector('.lightbox-backdrop') as HTMLElement;
+
+        if (!modal || !modalImg || !modalName || !closeBtn) {
+            console.error('Lightbox elements not found');
+            return;
+        }
+
+        document.querySelectorAll('.view-btn').forEach((btn: Element) => {
+            btn.addEventListener('click', (e: Event) => {
+                e.preventDefault();
+                const src = (btn as HTMLElement).getAttribute('data-lightbox');
+                const name = (btn as HTMLElement).getAttribute('data-product');
+
+                if (src && name) {
+                    modalImg.src = src;
+                    modalName.textContent = name;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        backdrop?.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', (e: Event) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+</script>
+
+<style>
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* About Hero Style - Match About page */
+    .about-hero {
+        background: linear-gradient(135deg, #231802 0%, #d5a166 100%);
+        padding: 3rem 0;
+        border-bottom: none;
+    }
+
+    .hero-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    .script-title {
+        //font-size: clamp(2.5rem, 8vw, 3rem);
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+
+        font-weight: 300;
+        color: #FFF;
+        margin: 0;
+        letter-spacing: -1px;
+        line-height: 1.1;
+        transition: all 0.4s ease;
+
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .breadcrumb a {
+        color: #FFF;
+        text-decoration: none;
+        transition: opacity 0.2s;
+        font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+        opacity: 0.8;
+    }
+
+    .breadcrumb span {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .current-page {
+        color: #FFF;
+        font-weight: 500;
+    }
+
+    /* --- 3D POP TRANSITION --- */
+    .hardware-3d-trigger {
+        perspective: 1200px;
+        overflow: visible;
+    }
+
+    .hardware-divider {
+        opacity: 0;
+        transform: translateZ(-200px) scale(0.8) rotateX(15deg);
+        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform-origin: top center;
+    }
+
+    .hardware-3d-trigger.reveal-active .hardware-divider {
+        opacity: 1;
+        transform: translateZ(0) scale(1) rotateX(0deg);
+    }
+
+    .hardware-reveal-3d {
+        opacity: 0;
+        transform: translateY(50px) rotateX(-5deg);
+        transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+    }
+
+    .hardware-3d-trigger.reveal-active + .hardware-reveal-3d {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+
+    /* Divider Slide Effect */
+    .slide-right-to-left {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+    }
+    .animated-line {
+        width: 0;
+        height: 4px;
+        margin: 1.5rem auto 0;
+        transition: width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+    }
+
+    .timber-line { background: #C9A96E; }
+    .hardware-line { background: #FF6B00; }
+
+    .reveal-active .slide-right-to-left {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .reveal-active .animated-line {
+        width: 80px;
+    }
+
+    .stagger-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-active.stagger-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .section-divider {
+        background: #0A0A0A;
+        padding: 5rem 0 2rem;
+        text-align: center;
+    }
+    .section-divider h2 {
+        font-size: 2.5rem;
+        color: #FAFAF7;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .category-section {
+        background: #0A0A0A;
+        padding: 5rem 0;
+        border-top: 1px solid #111;
+    }
+    .category-section.alt { background: #0d0d0d; }
+
+    .category-header { margin-bottom: 3rem; }
+    .category-header h2 { font-size: 2rem; font-weight: 600; color: #FAFAF7; }
+    .cat-desc { font-size: 14px; color: #555; max-width: 600px; line-height: 1.6; }
+    .label { font-size: 11px; color: #C9A96E; letter-spacing: 3px; display: block; margin-bottom: 1rem; }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 2rem;
+    }
+
+    .product-card {
+        background: #141414;
+        border: 1px solid #1e1e1e;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(201, 169, 110, 0.5);
+        box-shadow: 0 12px 28px rgba(201, 169, 110, 0.2);
+    }
+
+    .product-img-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-img {
+        height: 260px;
+        background: #1a1a1a;
+        border-bottom: 2px solid #C9A96E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .product-photo:hover {
+        transform: scale(1.08);
+    }
+
+    .product-img-placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #222 0%, #1a1a1a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .view-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+        padding: 0;
+    }
+
+    .view-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .product-img:hover .view-btn {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .view-btn:hover {
+        background: rgba(201, 169, 110, 0.4);
+        border-color: rgba(201, 169, 110, 0.6);
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    .specs-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        background: rgba(10, 10, 10, 0.4);
+    }
+
+    .spec-badge {
+        background: rgba(201, 169, 110, 0.15);
+        color: #C9A96E;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(201, 169, 110, 0.3);
+    }
+
+    .product-info {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .product-info h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #FAFAF7;
+        margin: 0;
+    }
+
+    .product-info p {
+        font-size: 13px;
+        color: #888;
+        line-height: 1.6;
+        flex: 1;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid #222;
+    }
+
+    .price {
+        font-size: 12px;
+        color: #666;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .btn-enquire {
+        background: #C9A96E;
+        color: #0A0A0A;
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 2px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+
+    .btn-enquire:hover {
+        background: #E8D5A3;
+        transform: translateY(-1px);
+    }
+
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lightbox-modal.active {
+        display: flex !important;
+    }
+
+    .lightbox-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.94);
+        z-index: -1;
+    }
+
+    .lightbox-content {
+        position: relative;
+        z-index: 10000;
+        max-width: 95vw;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox-close {
+        align-self: flex-end;
+        background: #C9A96E;
+        border: none;
+        color: #0A0A0A;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .lightbox-close:hover {
+        background: #E8D5A3;
+        transform: scale(1.15);
+    }
+
+    .lightbox-image {
+        max-width: 95vw;
+        max-height: 75vh;
+        border-radius: 8px;
+        object-fit: contain;
+        display: block;
+    }
+
+    .lightbox-info {
+        text-align: center;
+    }
+
+    .lightbox-info p {
+        color: #FAFAF7;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .category-section.hardware-theme {
+        background: #262a2d;
+        border-top: 1px solid #363b3f;
+    }
+    .category-section.hardware-theme .label { color: #FF6B00; }
+    .category-section.hardware-theme .product-card:hover { border-color: #FF6B00; }
+    .category-section.hardware-theme .product-img { border-bottom-color: #FF6B00; }
+    .category-section.hardware-theme .spec-badge { background: rgba(255, 107, 0, 0.15); color: #FF6B00; border-color: rgba(255, 107, 0, 0.3); }
+    .category-section.hardware-theme .btn-enquire { background: #FF6B00; color: #000; }
+    .category-section.hardware-theme .btn-enquire:hover { background: #FF8C3A; }
+
+    .category-section.light-theme { background: #F5F0E8; }
+    .category-section.light-theme .label { color: #8C7355; }
+    .category-section.light-theme .category-header h2 { color: #0A0A0A; }
+    .category-section.light-theme .product-card { background: #fff; border-color: #E8D5A3; }
+    .category-section.light-theme .product-info h3 { color: #0A0A0A; }
+    .category-section.light-theme .product-info p { color: #555; }
+    .category-section.light-theme .specs-badges { background: rgba(255, 255, 255, 0.5); }
+
+    .products-cta { background: #C9A96E; padding: 6rem 0; text-align: center; }
+    .products-cta h2 { color: #0A0A0A; font-size: 2rem; margin-bottom: 1rem; }
+    .products-cta p { color: #0A0A0A; margin-bottom: 2rem; }
+
+    .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #0A0A0A;
+        color: #FAFAF7;
+        padding: 15px 35px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+        background: #1a1a1a;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 1024px) {
+        .container { padding: 0 1.5rem; }
+        .products-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .section-divider h2 { font-size: 2rem; }
+        .product-img { height: 240px; }
+        .view-btn { width: 44px; height: 44px; }
+        .view-btn svg { width: 20px; height: 20px; }
+    }
+
+    @media (max-width: 768px) {
+        .container { padding: 0 1.25rem; }
+        .section-divider { padding: 3rem 0 1.5rem; }
+        .section-divider h2 { font-size: 1.75rem; }
+        .animated-line { width: 60px; }
+
+        .category-header h2 { font-size: 1.5rem; }
+        .cat-desc { font-size: 13px; }
+
+        .products-grid {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .product-card { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); }
+        .product-img { height: 200px; }
+        .product-photo:hover { transform: scale(1.05); }
+
+        .view-btn {
+            width: 42px;
+            height: 42px;
+            opacity: 0.8;
+        }
+
+        .product-info { padding: 1.25rem; }
+        .product-info h3 { font-size: 15px; }
+        .product-info p { font-size: 12px; -webkit-line-clamp: 3; }
+        .product-footer { gap: 0.75rem; padding-top: 0.75rem; }
+        .price { font-size: 11px; }
+        .btn-enquire { padding: 7px 14px; font-size: 11px; }
+
+        .specs-badges { gap: 0.35rem; padding: 0.5rem; }
+        .spec-badge { font-size: 10px; padding: 3px 8px; }
+
+        .lightbox-content { padding: 1.5rem; gap: 1rem; }
+        .lightbox-close { width: 40px; height: 40px; font-size: 24px; }
+        .lightbox-image { max-height: 70vh; }
+        .lightbox-info p { font-size: 16px; }
+
+        .products-cta { padding: 4rem 0; }
+        .products-cta h2 { font-size: 1.5rem; }
+        .products-cta p { font-size: 14px; }
+        .btn-whatsapp { padding: 12px 28px; font-size: 13px; }
+    }
+
+    @media (max-width: 600px) {
+        .container { padding: 0 1rem; }
+        .section-divider { padding: 2.5rem 0 1rem; }
+        .section-divider h2 { font-size: 1.5rem; letter-spacing: 1px; }
+
+        .category-header { margin-bottom: 2rem; }
+        .category-header h2 { font-size: 1.3rem; }
+        .cat-desc { font-size: 13px; }
+
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .product-img { height: 180px; }
+        .product-photo { padding: 0.5rem; }
+
+        .view-btn {
+            width: 38px;
+            height: 38px;
+            opacity: 0.85;
+        }
+
+        .product-info { padding: 1rem; gap: 0.5rem; }
+        .product-info h3 { font-size: 14px; margin-bottom: 0.25rem; }
+        .product-info p { font-size: 11px; line-height: 1.5; -webkit-line-clamp: 2; }
+        .product-footer { gap: 0.5rem; padding-top: 0.5rem; flex-wrap: wrap; }
+        .price { font-size: 10px; }
+        .btn-enquire {
+            padding: 6px 12px;
+            font-size: 10px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .specs-badges { gap: 0.25rem; padding: 0.4rem; }
+        .spec-badge { font-size: 9px; padding: 2px 6px; }
+
+        .lightbox-content { padding: 1.25rem; }
+        .lightbox-close { width: 36px; height: 36px; font-size: 20px; }
+        .lightbox-image { max-height: 65vh; }
+        .lightbox-info p { font-size: 14px; }
+
+        .products-cta { padding: 3rem 0; }
+        .products-cta h2 { font-size: 1.3rem; }
+        .products-cta p { font-size: 13px; }
+        .btn-whatsapp { padding: 10px 24px; font-size: 12px; flex-direction: column; width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+        .products-grid { grid-template-columns: 1fr; gap: 1rem; }
+        .product-img { height: 220px; }
+        .view-btn { width: 40px; height: 40px; }
+        .product-card { border-radius: 6px; }
+        .product-info { padding: 0.9rem; }
+        .product-info h3 { font-size: 13px; }
+        .product-info p { font-size: 11px; line-height: 1.4; -webkit-line-clamp: 2; }
+
+        .specs-badges { gap: 0.3rem; padding: 0.35rem; }
+        .spec-badge { font-size: 8px; padding: 2px 5px; border-radius: 12px; }
+
+        .product-footer { flex-direction: column-reverse; gap: 0.5rem; }
+        .btn-enquire { width: 100%; padding: 8px 12px; }
+        .price { font-size: 10px; }
+
+        .section-divider { padding: 2rem 0 0.75rem; }
+        .section-divider h2 { font-size: 1.3rem; }
+        .animated-line { width: 50px; margin: 1rem auto 0; }
+
+        .lightbox-content { padding: 1rem; gap: 0.75rem; }
+        .lightbox-image { max-height: 60vh; }
+
+        .products-cta { padding: 2.5rem 0; }
+        .products-cta h2 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+        .products-cta p { font-size: 12px; margin-bottom: 1.5rem; }
+    }
+
+    @media (max-width: 360px) {
+        .container { padding: 0 0.75rem; }
+        .section-divider h2 { font-size: 1.2rem; }
+        .category-header h2 { font-size: 1.1rem; }
+        .products-grid { gap: 0.75rem; }
+        .product-img { height: 180px; }
+        .view-btn { width: 36px; height: 36px; }
+        .product-info { padding: 0.75rem; }
+        .product-info h3 { font-size: 12px; }
+        .product-info p { font-size: 10px; }
+        .specs-badges { padding: 0.3rem; }
+        .spec-badge { font-size: 7px; padding: 1px 4px; }
+        .btn-whatsapp { padding: 9px 20px; font-size: 11px; }
+    }
+</style>

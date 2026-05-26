@@ -1,0 +1,770 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+interface GalleryItem {
+    id: string;
+    src: string;
+    alt: string;
+    name: string;
+    description: string;
+    spec?: string;
+}
+
+// ── TIMBER SECTION (dark theme) ────────────────────────────────
+const timberItems: GalleryItem[] = [
+    {
+        id: 'cypress',
+        src: '/images/cypress.jpg',
+        alt: 'Cypress timber stack at Nepro yard',
+        name: 'Cypress',
+        description: 'Lightweight, straight-grain softwood. The go-to for roof trusses, framing, and general construction across Kenya.',
+        spec: 'Available: 2×2 · 4×2 · 6×2 · 8×2',
+    },
+    {
+        id: 'bluegum',
+        src: '/images/bluegum.jpg',
+        alt: 'Blue gum timber posts',
+        name: 'Blue Gum',
+        description: 'Dense, durable hardwood ideal for fencing posts, scaffolding, and outdoor structural use. Naturally resistant to wear.',
+        spec: 'Posts · Poles · Custom cuts',
+    },
+    {
+        id: 'mukima',
+        src: '/images/mukima.jpg',
+        alt: 'Mukima hardwood slabs',
+        name: 'Mukima ',
+        description: 'Premium indigenous hardwood prized for furniture, joinery, and high-end interior finishes. Rich grain, exceptional finish.',
+        spec: 'Planks · Slabs · Custom dimensions',
+    },
+    {
+        id: 'pine',
+        src: '/images/pine.jpg',
+        alt: 'Pine timber bundle',
+        name: 'Pine',
+        description: 'Versatile, easy to work with. Treated pine is ideal for roofing battens, ceiling boards, and light construction.',
+        spec: 'Treated · Untreated · Multiple grades',
+    },
+    {
+        id: 'mill-action',
+        src: '/images/machinery_hero.jpg',
+        alt: 'Wood-Mizer LT40 milling timber',
+        name: 'Cut to Spec',
+        description: 'Every order is milled on our Wood-Mizer LT40 — exact dimensions, no middlemen, full control over the cut.',
+        spec: 'On-site milling · Same-day turnaround',
+    },
+    {
+        id: 'yard',
+        src: '/images/fullyard.jpeg',
+        alt: 'Aerial view of the Nepro yard',
+        name: 'The Yard',
+        description: 'Our Ruiru-Kimbo yard — fully stocked, organised by species and dimension, ready for collection or delivery.',
+        spec: 'Ruiru, Kiambu County',
+    },
+];
+
+// ── HARDWARE SECTION (light theme) ─────────────────────────────
+const hardwareItems: GalleryItem[] = [
+    {
+        id: 'flushdoors',
+        src: '/images/flushdoors.jpeg',
+        alt: 'Stack of flush doors',
+        name: 'Flush Doors',
+        description: 'Solid and hollow-core flush doors for residential and commercial use. Ready stock in standard sizes.',
+        spec: 'Standard & custom sizes',
+    },
+    {
+        id: 'frames',
+        src: '/images/frames.jpeg',
+        alt: 'Door and window frames',
+        name: 'Door & Window Frames',
+        description: 'Pre-cut hardwood frames for doors and windows. Built to standard openings, custom sizes available on request.',
+        spec: 'Hardwood · Treated softwood',
+    },
+    {
+        id: '2by2',
+        src: '/images/2by2.jpeg',
+        alt: '2 by 2 timber bundle',
+        name: '2×2 Timber',
+        description: 'The workhorse size. Ideal for ceiling battens, light framing, and finishing work. Sold per piece or in bulk.',
+        spec: 'Per piece · Bulk pricing',
+    },
+    {
+        id: '4by2',
+        src: '/images/4by2.jpeg',
+        alt: '4 by 2 timber bundle',
+        name: '4×2 Timber',
+        description: 'Standard structural size for wall plates, joists, and roof framing. Always in stock, multiple species available.',
+        spec: 'Cypress · Pine · Hardwood',
+    },
+    {
+        id: '6by2',
+        src: '/images/6by2.jpeg',
+        alt: '6 by 2 timber bundle',
+        name: '6×2 Timber',
+        description: 'Heavier framing size for rafters, large joists, and heavy load applications. Cut on demand.',
+        spec: 'Cut to length on request',
+    },
+    {
+        id: 'team',
+        src: '/images/Transport.png',
+        alt: 'Yard team loading timber for delivery',
+        name: 'Site Delivery',
+        description: 'Our crew loads and delivers across Ruiru, Kiambu, and Greater Nairobi. Schedule via WhatsApp or call ahead.',
+        spec: 'Ruiru · Kiambu · Nairobi',
+    },
+];
+
+const WHATSAPP_NUMBER = '254700000000';
+---
+
+<Layout title="Gallery — Nepro Timbers & Hardware">
+
+    <!-- ═══════════════════════════════════
+         TIMBER — DARK
+         ═══════════════════════════════════ -->
+    <section class="section section--dark" id="timber">
+        <div class="container">
+            <header class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-text">01 — Timber</span>
+                </div>
+                <h2 class="section-title">
+                    From log <span class="title-italic">to plank</span>.
+                </h2>
+                <p class="section-lede">
+                    Indigenous hardwoods, treated softwoods, and custom-cut dimensions —
+                    milled on-site at our Ruiru-Kimbo yard.
+                    <span class="lede-hint">Hover any card to see it up close.</span>
+                </p>
+            </header>
+
+            <div class="card-grid">
+                {timberItems.map((item) => (
+                        <article
+                                class="flip-card"
+                                tabindex="0"
+                                role="button"
+                                aria-label={`${item.name} — hover or press Enter to reveal`}
+                                data-id={item.id}
+                        >
+                            <div class="flip-card__inner">
+
+                                <div class="flip-card__face flip-card__face--front flip-card__face--dark-variant">
+                                    <img
+                                            src={item.src}
+                                            alt=""
+                                            aria-hidden="true"
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="flip-card__peek-img"
+                                    />
+                                    <div class="flip-card__vignette flip-card__vignette--dark"></div>
+                                    <div class="flip-card__label">
+                                        <span class="flip-card__id">/ {item.id}</span>
+                                        <h3 class="flip-card__name">{item.name}</h3>
+                                        <span class="flip-card__cue">
+                                        Hover to reveal
+                                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+                                        </svg>
+                                    </span>
+                                    </div>
+                                    <span class="flip-card__notch" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="flip-card__face flip-card__face--back">
+                                    <img
+                                            src={item.src}
+                                            alt={item.alt}
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="flip-card__back-img"
+                                    />
+                                    <div class="flip-card__back-body">
+                                        <p class="flip-card__back-name">{item.name}</p>
+                                        <p class="flip-card__back-desc">{item.description}</p>
+                                        {item.spec && <span class="flip-card__back-spec">{item.spec}</span>}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         HARDWARE — LIGHT
+         ═══════════════════════════════════ -->
+    <section class="section section--light" id="hardware">
+        <div class="container">
+            <header class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-text">02 — Hardware</span>
+                </div>
+                <h2 class="section-title section-title--ink">
+                    Doors, frames, <span class="title-italic">and standard sizes</span>.
+                </h2>
+                <p class="section-lede section-lede--muted">
+                    Ready-stock building hardware alongside our timber.
+                    One yard, one trip, everything you need to finish the job.
+                    <span class="lede-hint lede-hint--muted">Hover any card to see it up close.</span>
+                </p>
+            </header>
+
+            <div class="card-grid">
+                {hardwareItems.map((item) => (
+                        <article
+                                class="flip-card flip-card--light"
+                                tabindex="0"
+                                role="button"
+                                aria-label={`${item.name} — hover or press Enter to reveal`}
+                                data-id={item.id}
+                        >
+                            <div class="flip-card__inner">
+
+                                <div class="flip-card__face flip-card__face--front flip-card__face--light-variant">
+                                    <img
+                                            src={item.src}
+                                            alt=""
+                                            aria-hidden="true"
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="flip-card__peek-img"
+                                    />
+                                    <div class="flip-card__vignette flip-card__vignette--light"></div>
+                                    <div class="flip-card__label">
+                                        <span class="flip-card__id">/ {item.id}</span>
+                                        <h3 class="flip-card__name flip-card__name--ink">{item.name}</h3>
+                                        <span class="flip-card__cue flip-card__cue--muted">
+                                        Hover to reveal
+                                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+                                        </svg>
+                                    </span>
+                                    </div>
+                                    <span class="flip-card__notch flip-card__notch--ink" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="flip-card__face flip-card__face--back">
+                                    <img
+                                            src={item.src}
+                                            alt={item.alt}
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="flip-card__back-img"
+                                    />
+                                    <div class="flip-card__back-body">
+                                        <p class="flip-card__back-name">{item.name}</p>
+                                        <p class="flip-card__back-desc">{item.description}</p>
+                                        {item.spec && <span class="flip-card__back-spec">{item.spec}</span>}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </article>
+                ))}
+            </div>
+
+            <div class="cta-strip">
+                <span class="cta-strip__bar"></span>
+                <p class="cta-strip__copy">
+                    Need something not pictured?
+                    <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener" class="cta-strip__link">
+                        WhatsApp the yard
+                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+                        </svg>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</Layout>
+
+<script>
+    // Touch / mobile: CSS :hover won't fire, so we toggle .is-flipped on tap
+    const prefersTouch = window.matchMedia('(hover: none)');
+
+    function bindTouchFlip() {
+        if (!prefersTouch.matches) return;
+        document.querySelectorAll<HTMLElement>('.flip-card').forEach((card) => {
+            card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+            card.addEventListener('keydown', (e: KeyboardEvent) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.toggle('is-flipped');
+                }
+            });
+        });
+    }
+
+    bindTouchFlip();
+    prefersTouch.addEventListener('change', bindTouchFlip);
+</script>
+
+<style>
+    /* ══════════════════════════════════════════════
+       TOKENS
+       ══════════════════════════════════════════════ */
+    :root {
+        --red:   #CC2222;
+        --black: #0A0A0A;
+        --ink:   #1A1614;
+        --paper: #F5F2EC;
+        --white: #FFFFFF;
+        --muted: #6B6660;
+    }
+
+    /* ══════════════════════════════════════════════
+       SECTIONS
+       ══════════════════════════════════════════════ */
+    .section {
+        padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 4vw, 2.5rem);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section--dark  { background: var(--black); color: var(--white); }
+    .section--light { background: var(--paper); color: var(--ink);   }
+
+    .section--dark::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+                radial-gradient(circle at 10% 15%, rgba(204,34,34,.07) 0%, transparent 42%),
+                radial-gradient(circle at 90% 85%, rgba(204,34,34,.05) 0%, transparent 42%);
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ══════════════════════════════════════════════
+       HEADERS
+       ══════════════════════════════════════════════ */
+    .section-header { margin-bottom: clamp(2.5rem, 5vw, 4rem); max-width: 680px; }
+
+    .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: .875rem;
+        margin-bottom: 1rem;
+    }
+
+    .eyebrow-line  { width: 38px; height: 1px; background: var(--red); flex-shrink: 0; }
+    .eyebrow-text  {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: .68rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 500;
+    }
+
+    .section-title {
+        font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+        font-size: clamp(2rem, 5.5vw, 4.25rem);
+        line-height: .98;
+        letter-spacing: -.025em;
+        font-weight: 400;
+        color: var(--white);
+        margin: 0 0 1.1rem;
+    }
+
+    .section-title--ink { color: var(--ink); }
+
+    .title-italic {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--red);
+    }
+
+    .section-lede {
+        font-size: clamp(.92rem, 1.3vw, 1.03rem);
+        line-height: 1.65;
+        color: rgba(255,255,255,.62);
+        max-width: 540px;
+        margin: 0;
+    }
+
+    .section-lede--muted { color: var(--muted); }
+
+    .lede-hint {
+        display: block;
+        margin-top: .35rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: .65rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.35);
+    }
+
+    .lede-hint--muted { color: rgba(26,22,20,.35); }
+
+    /* ══════════════════════════════════════════════
+       GRID
+       ══════════════════════════════════════════════ */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        perspective: 1400px;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+        .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Mobile */
+    @media (max-width: 540px) {
+        .card-grid { grid-template-columns: 1fr; gap: .75rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       FLIP CARD SHELL
+       ══════════════════════════════════════════════ */
+    .flip-card {
+        aspect-ratio: 4 / 5;
+        position: relative;
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .flip-card:focus-visible .flip-card__inner {
+        outline: 3px solid var(--red);
+        outline-offset: 3px;
+    }
+
+    /* ── INNER: preserves 3D for children ── */
+    .flip-card__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform .72s cubic-bezier(.55, 0, .2, 1);
+    }
+
+    /* Desktop: hover triggers the flip via pure CSS */
+    @media (hover: hover) {
+        .flip-card:hover .flip-card__inner,
+        .flip-card:focus-visible .flip-card__inner {
+            transform: rotateY(180deg);
+        }
+    }
+
+    /* Mobile: JS adds .is-flipped on tap */
+    .flip-card.is-flipped .flip-card__inner {
+        transform: rotateY(180deg);
+    }
+
+    /* ══════════════════════════════════════════════
+       SHARED FACE RULES
+       ══════════════════════════════════════════════ */
+    .flip-card__face {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        overflow: hidden;
+    }
+
+    /* ══════════════════════════════════════════════
+       FRONT FACE
+       ══════════════════════════════════════════════ */
+    .flip-card__face--front {
+        display: flex;
+        flex-direction: column;
+        padding: 1.4rem;
+    }
+
+    .flip-card__face--dark-variant {
+        background: #161616;
+        border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .flip-card__face--light-variant {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,.07);
+    }
+
+    /* Peeking image — desaturated, half-faded at bottom-right */
+    .flip-card__peek-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 70%;
+        height: 68%;
+        object-fit: cover;
+        object-position: center;
+        pointer-events: none;
+        /* Desaturate + dim — looks like a watermark */
+        filter: saturate(.25) brightness(.5);
+        /* Fade edges so it blends into card bg */
+        mask-image: linear-gradient(
+                130deg,
+                transparent 0%,
+                rgba(0,0,0,.25) 30%,
+                rgba(0,0,0,.8) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+                130deg,
+                transparent 0%,
+                rgba(0,0,0,.25) 30%,
+                rgba(0,0,0,.8) 100%
+        );
+    }
+
+    /* Light cards: even brighter peek */
+    .flip-card--light .flip-card__peek-img {
+        filter: saturate(.2) brightness(.75);
+        mask-image: linear-gradient(
+                130deg,
+                transparent 0%,
+                rgba(0,0,0,.15) 30%,
+                rgba(0,0,0,.6) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+                130deg,
+                transparent 0%,
+                rgba(0,0,0,.15) 30%,
+                rgba(0,0,0,.6) 100%
+        );
+    }
+
+    /* Vignette keeps the label readable over the peeking image */
+    .flip-card__vignette {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    .flip-card__vignette--dark {
+        background: linear-gradient(
+                145deg,
+                rgba(22,22,22,.95) 0%,
+                rgba(22,22,22,.65) 50%,
+                rgba(22,22,22,.1) 100%
+        );
+    }
+
+    .flip-card__vignette--light {
+        background: linear-gradient(
+                145deg,
+                rgba(255,255,255,.97) 0%,
+                rgba(255,255,255,.75) 50%,
+                rgba(255,255,255,.1) 100%
+        );
+    }
+
+    /* Label sits above the vignette */
+    .flip-card__label {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .flip-card__id {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: .67rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 500;
+    }
+
+    .flip-card__name {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+        font-weight: 400;
+        line-height: 1.08;
+        letter-spacing: -.02em;
+        color: var(--white);
+        margin: 0;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .flip-card__name--ink { color: var(--ink); }
+
+    .flip-card__cue {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: .63rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.38);
+    }
+
+    .flip-card__cue--muted { color: rgba(26,22,20,.35); }
+
+    /* Notch — decorative corner bracket */
+    .flip-card__notch {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 18px;
+        height: 18px;
+        border-top: 1px solid rgba(255,255,255,.2);
+        border-right: 1px solid rgba(255,255,255,.2);
+        z-index: 2;
+    }
+
+    .flip-card__notch--ink {
+        border-top-color: rgba(0,0,0,.18);
+        border-right-color: rgba(0,0,0,.18);
+    }
+
+    /* ══════════════════════════════════════════════
+       BACK FACE
+       ══════════════════════════════════════════════ */
+    .flip-card__face--back {
+        transform: rotateY(180deg);
+        background: var(--black);
+    }
+
+    .flip-card__back-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: saturate(1.05) contrast(1.03);
+    }
+
+    .flip-card__back-body {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1.1rem 1.3rem 1.35rem;
+        background: linear-gradient(
+                to top,
+                rgba(10,10,10,.97) 0%,
+                rgba(10,10,10,.78) 55%,
+                transparent 100%
+        );
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+    }
+
+    .flip-card__back-name {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.15;
+        color: var(--white);
+        margin: 0;
+    }
+
+    .flip-card__back-desc {
+        font-size: .8rem;
+        line-height: 1.55;
+        color: rgba(255,255,255,.74);
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .flip-card__back-spec {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: .63rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 500;
+        margin-top: .15rem;
+    }
+
+    /* ══════════════════════════════════════════════
+       CTA STRIP
+       ══════════════════════════════════════════════ */
+    .cta-strip {
+        margin-top: clamp(2.5rem, 4.5vw, 4rem);
+        padding-top: 1.6rem;
+        border-top: 1px solid rgba(0,0,0,.09);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .cta-strip__bar {
+        width: 34px;
+        height: 1px;
+        background: var(--red);
+        flex-shrink: 0;
+    }
+
+    .cta-strip__copy {
+        font-size: .9rem;
+        color: var(--muted);
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .cta-strip__link {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        color: var(--red);
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 1px;
+        margin-left: .2rem;
+        transition: gap .2s ease, opacity .2s ease;
+    }
+
+    .cta-strip__link:hover { gap: .55rem; opacity: .75; }
+
+    /* ══════════════════════════════════════════════
+       REDUCED MOTION
+       ══════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+        .flip-card__inner { transition: none; }
+
+        @media (hover: hover) {
+            .flip-card:hover .flip-card__inner,
+            .flip-card:focus-visible .flip-card__inner { transform: none; }
+
+            .flip-card:hover .flip-card__face--front,
+            .flip-card:focus-visible .flip-card__face--front {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        .flip-card.is-flipped .flip-card__inner { transform: none; }
+        .flip-card.is-flipped .flip-card__face--front {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+</style>

@@ -1,0 +1,1307 @@
+---
+// Contact.astro - Nepro Timbers Contact Section (Dark Theme Redesign)
+const heroImage = '/images/img.png';
+---
+
+<section id="contact" class="contact-page">
+    <!-- Hero Section -->
+    <div class="contact-hero" style={`background-image: url('${heroImage}')`}>
+        <div class="hero-content">
+            <h1 class="hero-title">Contact</h1>
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator">»</span>
+                <span>Contact</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Info Icons -->
+    <div class="contact-info-row">
+        <div class="container">
+            <div class="info-icons">
+                <!-- Email -->
+                <div class="info-icon-item">
+                    <div class="icon-circle">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:info@neprotimbers.co.ke">info@neprotimbers.co.ke</a>
+                </div>
+
+                <!-- Phone -->
+                <div class="info-icon-item">
+                    <div class="icon-circle">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Phone</h3>
+                    <a href="tel:++254712593434">+254712593434</a>
+                </div>
+
+                <!-- Location -->
+                <div class="info-icon-item">
+                    <div class="icon-circle">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Address</h3>
+                    <p>Kimbo-Matangi Road, Ruiru</p>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="info-icon-item">
+                    <div class="icon-circle whatsapp">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/254712593434" target="_blank">Chat with us</a>
+                </div>
+
+                <!-- Hours -->
+                <div class="info-icon-item">
+                    <div class="icon-circle">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 8AM-5PM</p>
+                </div>
+
+                <!-- Delivery -->
+                <div class="info-icon-item">
+                    <div class="icon-circle delivery">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="3" width="15" height="13"/>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3>Delivery</h3>
+                    <p>Across Kiambu County</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+        <div class="container">
+            <div class="form-grid">
+                <!-- Left: Text & Map -->
+                <div class="form-left">
+                    <div class="form-intro">
+                        <p class="intro-label">Get in touch with us</p>
+                        <h2 class="intro-title">Feel free to<br/>Contact us now</h2>
+                        <p class="intro-text">
+                            From premium timber solutions to expert cutting and fast delivery.<br/>
+                            Contact us today and we will help your project come to life.
+                        </p>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-embed">
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!4v1777811676685!6m8!1m7!1srQfz6NoRHP3yhMcoCc2FaA!2m2!1d-1.138285371836802!2d36.98192341624706!3f194.4047311351569!4f-1.5380794959904165!5f0.7820865974627469"
+                                width="100%"
+                                height="100%"
+                                style="border:0;".
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Nepro Timbers - Kimbo-Matangi Road, Ruiru, Kenya"
+                        ></iframe>
+                        <div class="map-marker">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form Card -->
+                <div class="form-right">
+                    <div class="form-card">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            required
+                                            placeholder="Your Name (*)"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            required
+                                            placeholder="Your Email (*)"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        required
+                                        placeholder="Phone"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <select id="product" name="product" required>
+                                    <option value="">Product Interest</option>
+                                    <option value="timber">Timber (Cypress, Pine, Bluegum)</option>
+                                    <option value="roofing">Roofing Timber</option>
+                                    <option value="doors">Doors & Frames</option>
+                                    <option value="machined">Machined Products</option>
+                                    <option value="custom">Custom Orders</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required
+                        placeholder="Your Question"
+                ></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <span>Submit</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery Banner Section -->
+    <div class="delivery-banner">
+        <div class="container">
+            <div class="delivery-content">
+                <div class="delivery-image">
+                    <img src="/images/Transport.png" alt="Nepro Timbers Delivery Truck" />
+                </div>
+                <div class="delivery-info">
+                    <div class="delivery-badge">🚚 WE DELIVER</div>
+                    <h2 class="delivery-title">Fast Delivery Across Kiambu County</h2>
+                    <p class="delivery-text">
+                        Get your timber delivered straight to your construction site. We offer reliable,
+                        same-day delivery for orders placed before 2PM. Our fleet ensures your materials
+                        arrive on time, every time.
+                    </p>
+                    <ul class="delivery-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Same-day delivery available</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Delivery across Kiambu County</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Safe handling of all materials</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            <span>Competitive delivery rates</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/254712593434?text=Hi,%20I'd%20like%20to%20inquire%20about%20delivery%20services" target="_blank" class="delivery-cta">
+                        <span>Request Delivery Quote</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Left: Logo & Description -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">N</div>
+                        <div class="logo-text">
+                            <span class="logo-nepro">Nepro</span>
+                            <span class="logo-sub">Timbers & Hardware</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">
+                        Founded in Ruiru, Kenya, our timber business provides a full range of quality timber solutions and expert cutting services for construction projects across Kiambu County.
+                    </p>
+                </div>
+
+                <!-- Middle: Quick Access Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Access</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Middle: Contact Links -->
+                <div class="footer-links">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:info@neprotimbers.co.ke">Email Us</a></li>
+                        <li><a href="tel:+254712593434">Call Us</a></li>
+                        <li><a href="https://wa.me/254712593434" target="_blank">WhatsApp</a></li>
+                        <li><a href="/contact">Visit Our Yard</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right: Social Media -->
+                <div class="footer-social">
+                    <h3 class="footer-title">Connect with us</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank" class="social-link twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" target="_blank" class="social-link facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 3.667h-3.533v7.98H9.101z"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" target="_blank" class="social-link linkedin">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" target="_blank" class="social-link instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <h3 class="newsletter-title">Newsletter Signup</h3>
+                <form class="newsletter-form">
+                    <input
+                            type="email"
+                            placeholder="Enter your email address..."
+                            required
+                    />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nepro Timbers & Hardware. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Base */
+    .contact-page {
+        background: #ffffff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .contact-hero {
+        position: relative;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    .contact-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .hero-title {
+        font-size: 64px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 16px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #ffffff;
+        font-size: 15px;
+    }
+
+    .breadcrumb a {
+        color: #ffffff;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+
+    .breadcrumb a:hover {
+        opacity: 1;
+    }
+
+    .separator {
+        opacity: 0.5;
+    }
+
+    /* Contact Info Row */
+    .contact-info-row {
+        background: #1a1a1a;
+        padding: 60px 0;
+    }
+
+    .info-icons {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
+    }
+
+    .info-icon-item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-circle {
+        width: 90px;
+        height: 90px;
+        background: #B8764E;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+    }
+
+    .icon-circle.whatsapp {
+        background: #25D366;
+    }
+
+    .icon-circle.delivery {
+        background: #EA580C;
+    }
+
+    .info-icon-item:hover .icon-circle {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(184, 118, 78, 0.4);
+    }
+
+    .info-icon-item h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 8px 0;
+    }
+
+    .info-icon-item p,
+    .info-icon-item a {
+        font-size: 15px;
+        color: #999999;
+        margin: 0;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .info-icon-item a:hover {
+        color: #B8764E;
+    }
+
+    /* Form Section */
+    .form-section {
+        background: #0f0f0f;
+        padding: 100px 0 120px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    /* Left Side */
+    .form-left {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .intro-label {
+        color: #B8764E;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 0 0 16px 0;
+    }
+
+    .intro-title {
+        font-size: 48px;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.1;
+        margin: 0 0 24px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .intro-text {
+        font-size: 16px;
+        color: #999999;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .map-embed {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .map-embed iframe {
+        display: block;
+    }
+
+    .map-marker {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: #B8764E;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        box-shadow: 0 4px 20px rgba(184, 118, 78, 0.6);
+        pointer-events: none;
+    }
+
+    /* Right Side - Form Card */
+    .form-right {
+        position: sticky;
+        top: 40px;
+    }
+
+    .form-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 50px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 16px 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 15px;
+        font-family: inherit;
+        transition: all 0.2s;
+        background: #fafafa;
+        color: #333333;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #B8764E;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(184, 118, 78, 0.1);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #999999;
+    }
+
+    select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23999999' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        padding-right: 45px;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 140px;
+    }
+
+    .submit-btn {
+        background: #B8764E;
+        color: #ffffff;
+        border: none;
+        padding: 18px 40px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        transition: all 0.3s;
+        margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+        background: #9a5f3d;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(184, 118, 78, 0.4);
+    }
+
+    .submit-btn svg {
+        transition: transform 0.3s;
+    }
+
+    .submit-btn:hover svg {
+        transform: translateX(4px);
+    }
+
+    /* Delivery Banner Section */
+    .delivery-banner {
+        background: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .delivery-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+        opacity: 0.6;
+        z-index: 0;
+    }
+
+    .delivery-content {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .delivery-image {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    .delivery-image::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), transparent);
+        z-index: 1;
+    }
+
+    .delivery-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .delivery-info {
+        color: #1a1a1a;
+    }
+
+    .delivery-badge {
+        display: inline-block;
+        background: #CC2222;
+        color: #ffffff;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+    }
+
+    .delivery-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #000000;
+        margin: 0 0 20px 0;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }
+
+    .delivery-text {
+        font-size: 17px;
+        color: #4b5563;
+        line-height: 1.7;
+        margin: 0 0 30px 0;
+    }
+
+    .delivery-features {
+        list-style: none;
+        margin: 0 0 32px 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .delivery-features li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #1f2937;
+        font-size: 15px;
+    }
+
+    .delivery-features svg {
+        flex-shrink: 0;
+        color: #CC2222;
+        background: rgba(204, 34, 34, 0.1);
+        border-radius: 50%;
+        padding: 4px;
+    }
+
+    .delivery-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: #CC2222;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 16px 32px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        transition: all 0.3s;
+        box-shadow: 0 4px 20px rgba(204, 34, 34, 0.2);
+    }
+
+    .delivery-cta:hover {
+        background: #000000;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .delivery-cta svg {
+        transition: transform 0.3s;
+    }
+
+    .delivery-cta:hover svg {
+        transform: translateX(4px);
+    }
+
+    /* Footer Section */
+    .footer-section {
+        background: #0a0a0a;
+        padding: 80px 0 0;
+        border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+
+    /* Footer Brand */
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .logo-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #B8764E 0%, #9a5f3d 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .logo-nepro {
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.01em;
+    }
+
+    .logo-sub {
+        font-size: 13px;
+        font-weight: 500;
+        color: #666666;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .footer-desc {
+        font-size: 15px;
+        color: #666666;
+        line-height: 1.7;
+        margin: 0;
+        max-width: 400px;
+    }
+
+    /* Footer Links */
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-links a {
+        color: #666666;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-links a::before {
+        content: '›';
+        color: #B8764E;
+        font-size: 18px;
+        font-weight: 700;
+        opacity: 0;
+        transform: translateX(-8px);
+        transition: all 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: #B8764E;
+        transform: translateX(8px);
+    }
+
+    .footer-links a:hover::before {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Footer Social */
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 16px;
+        background: #141414;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: 1px solid transparent;
+    }
+
+    .social-link svg {
+        flex-shrink: 0;
+    }
+
+    .social-link.twitter {
+        border-color: #1DA1F2;
+    }
+
+    .social-link.twitter:hover {
+        background: #1DA1F2;
+        transform: translateX(8px);
+    }
+
+    .social-link.facebook {
+        border-color: #1877F2;
+    }
+
+    .social-link.facebook:hover {
+        background: #1877F2;
+        transform: translateX(8px);
+    }
+
+    .social-link.linkedin {
+        border-color: #0A66C2;
+    }
+
+    .social-link.linkedin:hover {
+        background: #0A66C2;
+        transform: translateX(8px);
+    }
+
+    .social-link.instagram {
+        border-color: #E4405F;
+    }
+
+    .social-link.instagram:hover {
+        background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+        transform: translateX(8px);
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+        background: #141414;
+        padding: 40px;
+        border-radius: 12px;
+        margin-bottom: 60px;
+    }
+
+    .newsletter-title {
+        font-size: 28px;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 24px 0;
+        letter-spacing: -0.01em;
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 12px;
+        max-width: 600px;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 16px 24px;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        background: #0a0a0a;
+        color: #ffffff;
+        font-size: 15px;
+        font-family: inherit;
+        transition: all 0.2s;
+    }
+
+    .newsletter-form input:focus {
+        outline: none;
+        border-color: #B8764E;
+        box-shadow: 0 0 0 3px rgba(184, 118, 78, 0.1);
+    }
+
+    .newsletter-form input::placeholder {
+        color: #666666;
+    }
+
+    .newsletter-form button {
+        padding: 16px 36px;
+        background: #B8764E;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+    }
+
+    .newsletter-form button:hover {
+        background: #9a5f3d;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(184, 118, 78, 0.4);
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+        border-top: 1px solid #1a1a1a;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        color: #666666;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .info-icons {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .form-grid {
+            gap: 60px;
+        }
+
+        .delivery-content {
+            gap: 40px;
+        }
+
+        .delivery-features {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 48px;
+        }
+
+        .contact-info-row {
+            padding: 40px 0;
+        }
+
+        .info-icons {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .form-section {
+            padding: 60px 0 80px;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .form-right {
+            position: static;
+        }
+
+        .form-card {
+            padding: 35px;
+        }
+
+        .form-row-2 {
+            grid-template-columns: 1fr;
+        }
+
+        .intro-title {
+            font-size: 36px;
+        }
+
+        .map-embed {
+            height: 300px;
+        }
+
+        .delivery-banner {
+            padding: 60px 0;
+        }
+
+        .delivery-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .delivery-image img {
+            height: 300px;
+        }
+
+        .delivery-title {
+            font-size: 32px;
+        }
+
+        .delivery-features {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-section {
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            grid-column: auto;
+        }
+
+        .newsletter-section {
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .newsletter-title {
+            font-size: 24px;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+
+        .social-icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-hero {
+            height: 300px;
+        }
+
+        .hero-title {
+            font-size: 36px;
+        }
+
+        .info-icons {
+            grid-template-columns: 1fr;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+        }
+
+        .social-icons {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-logo {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+    }
+</style>
+
+<script>
+    // Form submission handler - WhatsApp Integration
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contactForm') as HTMLFormElement | null;
+
+        if (form) {
+            form.addEventListener('submit', async (e: Event) => {
+                e.preventDefault();
+
+                const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
+                const originalText = submitBtn.innerHTML;
+
+                // Show loading state
+                submitBtn.innerHTML = `
+          <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 1s linear infinite;">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+          <span>Opening WhatsApp...</span>
+        `;
+                submitBtn.disabled = true;
+
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+
+                // Format message for WhatsApp
+                const message = `*New Contact Form Submission*
+
+📝 *Name:* ${data.name}
+📧 *Email:* ${data.email}
+📱 *Phone:* ${data.phone}
+🛒 *Product Interest:* ${data.product}
+
+💬 *Message:*
+${data.message}
+
+${data.delivery ? '✅ Interested in delivery services' : ''}`;
+
+                // Wait a moment for visual feedback
+                await new Promise(resolve => setTimeout(resolve, 800));
+
+                // Open WhatsApp with pre-filled message
+                // IMPORTANT: Replace 254712345678 with your actual WhatsApp number
+                const whatsappNumber = '+254712593434'; // ← UPDATE THIS!
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+                window.open(whatsappURL, '_blank');
+
+                // Success state
+                submitBtn.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          <span>Opened WhatsApp!</span>
+        `;
+                submitBtn.style.background = '#25D366';
+
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+        }
+    });
+</script>
+
+<style>
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>

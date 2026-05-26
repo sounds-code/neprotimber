@@ -1,0 +1,806 @@
+---
+---
+
+<section class="about-work" id="about-work">
+    <div class="container">
+        <div class="about-grid">
+
+            <!-- LEFT — TEXT -->
+            <div class="about-content reveal-up">
+                <span class="label">OUR WORK</span>
+                <h2 class="about-title">Real Timber. Real People. Real Trust.</h2>
+
+                <p class="about-desc">
+                    Established in 2017 along Kimbo–Matangi Road, Nepro Timbers has grown
+                    from a local timber business into a trusted brand serving 100+ customers
+                    across Kiambu County. We specialize in premium-quality timber solutions
+                    crafted for durability, style, and modern construction needs.
+                </p>
+
+                <p class="about-desc">
+                    Built on trust, quality, and exceptional craftsmanship, we deliver
+                    reliable timber products that bring every project to life.
+                </p>
+
+                <!-- TRUST CHECKMARKS -->
+                <div class="trust-list">
+                    <div class="trust-check">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>Quality Timber</span>
+                    </div>
+                    <div class="trust-check">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>Expert Cutting</span>
+                    </div>
+                    <div class="trust-check">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>Fast Delivery</span>
+                    </div>
+                </div>
+
+                <a href="/about" class="btn-learn-more">
+                    Learn More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- RIGHT — MAGAZINE COLLAGE -->
+            <div class="about-media">
+                <!-- Video -->
+                <div class="media-card video-card reveal-fade">
+                    <video
+                            src="/videos/nepro_work.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            class="media-video"
+                    ></video>
+                    <div class="video-badge">
+                        <span class="pulse-dot"></span>
+                        LIVE
+                    </div>
+                    <button class="mute-toggle" id="muteBtn" aria-label="Toggle sound">
+                        <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="23" y1="9" x2="17" y2="15" stroke-linecap="round"/>
+                            <line x1="17" y1="9" x2="23" y2="15" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="card-tag">Our Operation</div>
+                </div>
+
+                <!-- 2 Photos with 3D tilt + click to expand -->
+                <div class="photo-row">
+                    <div class="media-card photo-card reveal-fade-delay-1 tilt-card" data-image="/images/2ndworkers.jpeg" data-name="Skilled Team">
+                        <img src="/images/2ndworkers.jpeg" alt="Nepro workers in action" />
+                        <div class="hover-overlay">
+                            <div class="overlay-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span>Click to view</span>
+                        </div>
+                        <div class="card-tag">Skilled Team</div>
+                    </div>
+                    <div class="media-card photo-card reveal-fade-delay-2 tilt-card" data-image="/images/resaw.jpeg" data-name="Precision Cutting">
+                        <img src="/images/resaw.jpeg" alt="Resaw machinery cutting timber" />
+                        <div class="hover-overlay">
+                            <div class="overlay-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span>Click to view</span>
+                        </div>
+                        <div class="card-tag">Precision Cutting</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg" />
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- WORK SKILLS SECTION -->
+    <section class="work-skills">
+        <div class="container">
+            <div class="skills-header">
+                <h2>Why Choose Our Work</h2>
+                <p>Excellence in every project, craftsmanship in every cut</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="work-skill-card">
+                    <div class="skill-number">01</div>
+                    <div class="skill-content">
+                        <h3>Premium Materials</h3>
+                        <p>We only work with the finest quality timber sourced from trusted suppliers. Every piece is inspected before processing.</p>
+                    </div>
+                </div>
+
+                <div class="work-skill-card">
+                    <div class="skill-number">02</div>
+                    <div class="skill-content">
+                        <h3>Expert Craftsmanship</h3>
+                        <p>Our skilled team uses precision machinery and years of experience to deliver perfectly cut timber for every specification.</p>
+                    </div>
+                </div>
+
+                <div class="work-skill-card">
+                    <div class="skill-number">03</div>
+                    <div class="skill-content">
+                        <h3>Fast Turnaround</h3>
+                        <p>From order to delivery, we work efficiently without compromising quality. Same-day delivery available for local orders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<style>
+    /* SECTION */
+    .about-work {
+        background: #f5f2f2;
+        padding: 7rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-work::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+                radial-gradient(ellipse at 90% 20%, rgba(204,34,34,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 10% 80%, rgba(0,0,0,0.025) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    /* LEFT TEXT */
+    .label {
+        font-size: 11px;
+        color: #CC2222;
+        letter-spacing: 3px;
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        position: relative;
+        padding-left: 28px;
+    }
+    .label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background: #CC2222;
+        transform: translateY(-50%);
+    }
+
+    .about-title {
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 800;
+        color: #0A0A0A;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-desc {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.2rem;
+    }
+
+    .trust-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem 2rem;
+        margin: 2rem 0;
+    }
+
+    .trust-check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .check-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #CC2222;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(204,34,34,0.3);
+    }
+    .check-icon svg { width: 16px; height: 16px; }
+
+    .trust-check span {
+        font-size: 15px;
+        font-weight: 600;
+        color: #0A0A0A;
+    }
+
+    .btn-learn-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #CC2222;
+        color: #FFFFFF;
+        padding: 14px 32px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background 0.2s, transform 0.2s, gap 0.2s, box-shadow 0.2s;
+        letter-spacing: 0.5px;
+        margin-top: 0.5rem;
+        box-shadow: 0 8px 20px rgba(204,34,34,0.25);
+    }
+    .btn-learn-more:hover {
+        background: #AA1111;
+        transform: translateY(-2px);
+        gap: 12px;
+        box-shadow: 0 12px 28px rgba(204,34,34,0.4);
+    }
+
+    /* RIGHT MEDIA */
+    .about-media {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        perspective: 1000px;
+    }
+
+    .media-card {
+        position: relative;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .media-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #CC2222;
+        z-index: 2;
+    }
+
+    /* VIDEO CARD */
+    .video-card {
+        aspect-ratio: 16/10;
+    }
+    .video-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(0,0,0,0.18);
+    }
+
+    .media-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .video-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        z-index: 3;
+    }
+
+    .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background: #CC2222;
+        border-radius: 50%;
+        animation: pulseDot 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(204,34,34,0.6); }
+        50% { box-shadow: 0 0 0 8px rgba(204,34,34,0); }
+    }
+
+    .mute-toggle {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(6px);
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .mute-toggle:hover {
+        background: #CC2222;
+        transform: scale(1.1);
+    }
+    .mute-toggle svg { width: 16px; height: 16px; }
+
+    /* PHOTOS */
+    .photo-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .photo-card {
+        aspect-ratio: 4/3;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        will-change: transform;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    /* HOVER OVERLAY ON PHOTOS */
+    .hover-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+                135deg,
+                rgba(204,34,34,0.85) 0%,
+                rgba(0,0,0,0.85) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        color: #fff;
+    }
+
+    .photo-card:hover .hover-overlay {
+        opacity: 1;
+    }
+
+    .photo-card:hover img {
+        transform: scale(1.08);
+    }
+
+    .overlay-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(6px);
+        border: 2px solid rgba(255,255,255,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .overlay-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .hover-overlay span {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* CARD TAG */
+    .card-tag {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(6px);
+        color: #0A0A0A;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        z-index: 2;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    .lightbox.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .lightbox-content {
+        position: relative;
+        max-width: 1100px;
+        width: 100%;
+        max-height: 90vh;
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+    .lightbox.active .lightbox-content {
+        transform: scale(1);
+    }
+
+    .lightbox-content img {
+        width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-caption {
+        text-align: center;
+        color: #fff;
+        margin-top: 1rem;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .lightbox-close:hover {
+        background: #CC2222;
+        transform: scale(1.1);
+    }
+
+    /* ════════════════════════════════════════════════════
+       WORK SKILLS SECTION
+       ════════════════════════════════════════════════════ */
+    .work-skills {
+        background: #0A0A0A;
+        padding: 5rem 0;
+        border-top: 1px solid #111;
+    }
+
+    .skills-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .skills-header h2 {
+        font-size: 2rem;
+        color: #FAFAF7;
+        margin: 0 0 0.75rem 0;
+        font-weight: 700;
+    }
+
+    .skills-header p {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .work-skill-card {
+        background: linear-gradient(135deg, rgba(204, 34, 34, 0.05) 0%, rgba(201, 169, 110, 0.05) 100%);
+        border: 1px solid rgba(201, 169, 110, 0.15);
+        border-left: 3px solid #CC2222;
+        padding: 2rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .work-skill-card:hover {
+        border-left-color: #FF6B00;
+        background: linear-gradient(135deg, rgba(255, 107, 0, 0.08) 0%, rgba(201, 169, 110, 0.08) 100%);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(204, 34, 34, 0.1);
+    }
+
+    .skill-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: rgba(201, 169, 110, 0.3);
+        margin-bottom: 1rem;
+        line-height: 1;
+    }
+
+    .skill-content h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #FAFAF7;
+        margin: 0 0 0.75rem 0;
+        line-height: 1.3;
+    }
+
+    .skill-content p {
+        font-size: 13px;
+        color: #888;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    /* SCROLL REVEAL */
+    .reveal-up,
+    .reveal-fade,
+    .reveal-fade-delay-1,
+    .reveal-fade-delay-2 {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-fade-delay-1 { transition-delay: 0.15s; }
+    .reveal-fade-delay-2 { transition-delay: 0.3s; }
+
+    .reveal-up.visible,
+    .reveal-fade.visible,
+    .reveal-fade-delay-1.visible,
+    .reveal-fade-delay-2.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* TABLET */
+    @media (max-width: 1024px) {
+        .about-grid { gap: 3rem; }
+        .about-work { padding: 5rem 0; }
+        .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+        .about-work { padding: 4rem 0; }
+        .container { padding: 0 1.25rem; }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .about-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+        .about-desc { font-size: 14px; }
+        .trust-list { gap: 1rem 1.5rem; }
+        .btn-learn-more { width: 100%; justify-content: center; }
+
+        .video-card { aspect-ratio: 16/10; }
+        .photo-card { aspect-ratio: 1/1; }
+
+        /* Disable 3D tilt on mobile */
+        .photo-card {
+            transform: none !important;
+        }
+
+        .work-skills { padding: 3rem 0; }
+        .skills-header h2 { font-size: 1.5rem; }
+        .skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .work-skill-card { padding: 1.5rem; }
+        .skill-number { font-size: 2rem; }
+        .skill-content h3 { font-size: 15px; }
+        .skill-content p { font-size: 12px; }
+    }
+
+    @media (max-width: 480px) {
+        .trust-list {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .photo-row {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        .photo-card { aspect-ratio: 4/3; }
+        .lightbox { padding: 1rem; }
+        .lightbox-close { width: 36px; height: 36px; top: 12px; right: 12px; }
+        .work-skills { padding: 2rem 0; }
+        .skills-grid { gap: 1rem; }
+    }
+</style>
+
+<script>
+    // ==================== SCROLL REVEAL ====================
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll(
+        '.reveal-up, .reveal-fade, .reveal-fade-delay-1, .reveal-fade-delay-2'
+    ).forEach((el) => observer.observe(el));
+
+    // ==================== MUTE TOGGLE ====================
+    const muteBtn = document.getElementById('muteBtn');
+    const video = document.querySelector('.media-video') as HTMLVideoElement;
+    const iconMuted = document.querySelector('.icon-muted') as HTMLElement;
+    const iconUnmuted = document.querySelector('.icon-unmuted') as HTMLElement;
+
+    muteBtn?.addEventListener('click', () => {
+        if (video.muted) {
+            video.muted = false;
+            iconMuted.style.display = 'none';
+            iconUnmuted.style.display = 'block';
+        } else {
+            video.muted = true;
+            iconMuted.style.display = 'block';
+            iconUnmuted.style.display = 'none';
+        }
+    });
+
+    // ==================== 3D TILT EFFECT ====================
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (!isMobile) {
+        tiltCards.forEach(card => {
+            const cardEl = card as HTMLElement;
+
+            cardEl.addEventListener('mousemove', (e: Event) => {
+                const mouseEvent = e as MouseEvent;
+                const rect = cardEl.getBoundingClientRect();
+                const x = mouseEvent.clientX - rect.left;
+                const y = mouseEvent.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -8;
+                const rotateY = ((x - centerX) / centerX) * 8;
+
+                cardEl.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.02)`;
+            });
+
+            cardEl.addEventListener('mouseleave', () => {
+                cardEl.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+            });
+        });
+    }
+
+    // ==================== LIGHTBOX ====================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg') as HTMLImageElement;
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const image = card.getAttribute('data-image') || '';
+            const name = card.getAttribute('data-name') || '';
+            lightboxImg.src = image;
+            lightboxImg.alt = name;
+            if (lightboxCaption) lightboxCaption.textContent = name;
+            lightbox?.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeLightbox() {
+        lightbox?.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            lightboxImg.src = '';
+        }, 300);
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+
+    lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+</script>

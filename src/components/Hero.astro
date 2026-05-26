@@ -1,0 +1,748 @@
+---
+// Hero.astro — Nepro Timbers & Hardware
+// Fixed: fetchpriority on LCP image, DOMContentLoaded guard,
+//        richer alt text, mobile opacity without !important,
+//        scroll-hint conditionally hidden, placeholder notes flagged
+//        UPDATED: Removed orange cursors, improved title spacing
+---
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-location">
+                <span class="location-bar" aria-hidden="true"></span>
+                <span class="location-text">RUIRU KIMBO, Kiambu</span>
+            </div>            <h1 class="hero-title">
+            <span class="line1-bold" id="line1"></span><br/>
+            <span class="line2-medium" id="line2"></span>
+        </h1>
+            <p class="hero-sub fade-in-up" style="animation-delay: 2s;">
+                Your trusted hardware &amp; timber supplier in Ruiru Kimbo,
+                Kiambu County. Quality cuts, fast delivery.
+            </p>
+            <div class="hero-actions fade-in-up" style="animation-delay: 2.3s;">
+                <a href="/products" class="btn-primary">Browse Products</a>
+                <!-- TODO: Replace 254700000000 with real WhatsApp number before launch -->
+                <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.85L.057 23.5l5.797-1.524A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.886 9.886 0 01-5.031-1.378l-.36-.214-3.742.981.999-3.648-.235-.374A9.861 9.861 0 012.106 12C2.106 6.535 6.535 2.106 12 2.106c5.466 0 9.894 4.429 9.894 9.894 0 5.466-4.428 9.894-9.894 9.894z"/>
+                    </svg>
+                    WhatsApp Us
+                </a>
+            </div>
+
+            <!-- TRUST BADGES -->
+            <div class="trust-badges fade-in-up" style="animation-delay: 2.6s;">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke-linecap="round"/>
+                    </svg>
+                    <span>Quality Guaranteed</span>
+                </div>
+                <div class="trust-divider" aria-hidden="true"></div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/>
+                    </svg>
+                    <span>Same Day Delivery</span>
+                </div>
+                <div class="trust-divider" aria-hidden="true"></div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-linecap="round"/>
+                    </svg>
+                    <span>10+ Years Trusted</span>
+                </div>
+            </div>
+
+            <!-- SKILLS SECTION -->
+            <div class="skills-showcase fade-in-up" style="animation-delay: 2.9s;">
+                <div class="skill-card">
+                    <div class="skill-emoji">🌳</div>
+                    <div class="skill-content">
+                        <h3>Quality Timber Selection</h3>
+                        <p>Carefully sourced and graded timber from trusted suppliers. Every piece meets our standards.</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-emoji">💬</div>
+                    <div class="skill-content">
+                        <h3>24/7 WhatsApp Support</h3>
+                        <p>Real people, real answers. Message us anytime with questions, orders, or custom requests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: images -->
+        <div class="hero-right fade-in-up" style="animation-delay: 2.5s;">
+            <div class="hero-img-main">
+                <div class="img-overlay"></div>
+                <!--
+                    LCP image — fetchpriority="high" tells the browser to load
+                    this before other below-fold images. No loading="lazy" on LCP.
+                -->
+                <img
+                        src="/images/RealOwner.png"
+                        alt="Nepro Timbers owner standing in the Ruiru-Kimbo timber yard"
+                        fetchpriority="high"
+                        decoding="async"
+                        class="hero-img"
+                />
+                <div class="img-badge">
+                    <span class="badge-number">10+</span>
+                    <span class="badge-text">Years in Business</span>
+                </div>
+            </div>
+            <div class="hero-img-grid">
+                <div class="img-small img-small-photo">
+                    <img
+                            src="/images/machinery_hero.jpg"
+                            alt="Wood-Mizer LT40 sawmill cutting hardwood timber at Nepro yard"
+                            loading="lazy"
+                            decoding="async"
+                            class="small-img"
+                    />
+                    <span>Our Machinery</span>
+                </div>
+                <div class="img-small img-small-photo">
+                    <!--
+                        FIX: timberstock.png replaced with fullyard.jpeg (WebP preferred).
+                        If you have a WebP version, use: src="/images/fullyard.webp"
+                        PNG photos are 3-5× heavier than WebP — swap ASAP for PageSpeed.
+                    -->
+                    <img
+                            src="/images/timberstock.png"
+                            alt="Stacked cypress and hardwood timber stock ready for sale at Nepro Ruiru yard"
+                            loading="lazy"
+                            decoding="async"
+                            class="small-img"
+                    />
+                    <span>Timber Stock</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll hint: hidden on mobile via CSS only, no JS needed -->
+    <div class="scroll-hint fade-in-up" style="animation-delay: 3s;" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<style>
+    /* ══════════════════════════════════════════════
+       HERO BASE
+       ══════════════════════════════════════════════ */
+    .hero {
+        background: #FFFFFF;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-left: 4px solid #CC2222;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+                radial-gradient(ellipse at 80% 50%, rgba(204,34,34,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(0,0,0,0.03) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════════
+       LAYOUT
+       ══════════════════════════════════════════════ */
+    .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 7rem 2rem 6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ══════════════════════════════════════════════
+       LEFT — CONTENT
+       ══════════════════════════════════════════════ */
+    /* ══════════════════════════════════════════════
+   LOCATION TAG — slide-in accent + text
+   ══════════════════════════════════════════════ */
+    .hero-location {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 1.4rem;
+        overflow: hidden; /* clip the slide */
+    }
+
+    .location-bar {
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #CC2222;
+        animation: barGrow 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation-delay: 0.2s;
+        flex-shrink: 0;
+    }
+
+    .location-text {
+        font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+        color: #CC2222;
+        letter-spacing: 4px;
+        font-weight: 600;
+        text-transform: uppercase;
+        transform: translateX(-20px);
+        opacity: 0;
+        animation: locationSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation-delay: 0.5s;
+        white-space: nowrap;
+    }
+
+    @keyframes barGrow {
+        from { width: 0; }
+        to   { width: 48px; }
+    }
+
+    @keyframes locationSlide {
+        from { transform: translateX(-20px); opacity: 0; }
+        to   { transform: translateX(0);     opacity: 1; }
+    }
+
+    /* Mobile — slightly tighter */
+    @media (max-width: 768px) {
+        .location-text { letter-spacing: 3px; }
+        @keyframes barGrow {
+            from { width: 0; }
+            to   { width: 32px; }
+        }
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+        color: #0A0A0A;
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+        margin-bottom: 2rem;
+        min-height: 2.4em;
+        overflow: hidden;
+    }
+
+    .line1-bold  { font-weight: 800; }
+    .line2-medium { font-weight: 800; }
+
+    .cursor1, .cursor2 {
+        display: none;
+    }
+
+    .hero-sub {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        max-width: 440px;
+        opacity: 0;
+        font-weight: 400;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        opacity: 0;
+        margin-bottom: 2rem;
+    }
+
+    /* ══════════════════════════════════════════════
+       ANIMATIONS
+       ══════════════════════════════════════════════ */
+    .fade-in-up { animation: fadeUp 0.7s ease forwards; }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════════════════
+       BUTTONS
+       ══════════════════════════════════════════════ */
+    .btn-primary {
+        background: #CC2222;
+        color: #FFFFFF;
+        padding: 14px 30px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background 0.2s, transform 0.2s;
+        display: inline-block;
+        letter-spacing: 0.5px;
+    }
+    .btn-primary:hover {
+        background: #AA1111;
+        transform: scale(1.03);
+    }
+
+    .btn-whatsapp {
+        background: transparent;
+        color: #0A0A0A;
+        border: 1.5px solid #0A0A0A;
+        padding: 14px 22px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .btn-whatsapp:hover {
+        background: #0A0A0A;
+        color: #FFFFFF;
+        transform: scale(1.03);
+    }
+
+    /* ══════════════════════════════════════════════
+       TRUST BADGES
+       ══════════════════════════════════════════════ */
+    .trust-badges {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        opacity: 0; /* controlled by fade-in-up */
+        margin-bottom: 1.5rem;
+    }
+    .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #444;
+        font-weight: 500;
+    }
+    .trust-item svg {
+        width: 16px;
+        height: 16px;
+        color: #CC2222;
+        flex-shrink: 0;
+    }
+    .trust-divider {
+        width: 1px;
+        height: 16px;
+        background: #ddd;
+    }
+
+    /* ══════════════════════════════════════════════
+       SKILLS SECTION
+       ══════════════════════════════════════════════ */
+    .skills-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        opacity: 0; /* controlled by fade-in-up */
+        margin-bottom: 1rem;
+    }
+
+    .skill-card {
+        display: flex;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: #F9F9F9;
+        border: 1px solid #EEE;
+        border-left: 3px solid #CC2222;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+        background: #F5F5F5;
+        border-left-color: #AA1111;
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(204, 34, 34, 0.08);
+    }
+
+    .skill-emoji {
+        font-size: 2.5rem;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    .skill-content h3 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #0A0A0A;
+        margin: 0 0 0.5rem 0;
+        line-height: 1.3;
+    }
+
+    .skill-content p {
+        font-size: 12px;
+        color: #666;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════════════════
+       RIGHT — IMAGES
+       ══════════════════════════════════════════════ */
+    .hero-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* opacity controlled by fade-in-up animation class only —
+           no inline opacity:0 so mobile override needs no !important */
+    }
+
+    .hero-img-main {
+        width: 100%;
+        aspect-ratio: 16/10;
+        background: #f5f5f5;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .img-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.35) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+    }
+
+    .img-badge {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        background: #CC2222;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 4px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .badge-number {
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1;
+    }
+    .badge-text {
+        font-size: 10px;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+
+    /* ══════════════════════════════════════════════
+       SMALL IMAGE CARDS
+       ══════════════════════════════════════════════ */
+    .hero-img-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .img-small {
+        background: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        border-top: 3px solid #CC2222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .img-small:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    /* Photo variant — flush layout, no extra padding */
+    .img-small-photo {
+        padding: 0;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .small-img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px 5px 0 0;
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .img-small span {
+        padding: 8px 12px;
+        width: 100%;
+        text-align: center;
+        font-size: 11px;
+        color: #666;
+        font-weight: 500;
+    }
+
+    /* ══════════════════════════════════════════════
+       SCROLL HINT
+       Hidden via CSS on mobile — no JS, no !important
+       ══════════════════════════════════════════════ */
+    .scroll-hint {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 2.5rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1;
+        opacity: 0; /* fade-in-up handles reveal */
+    }
+    .scroll-hint span {
+        font-size: 10px;
+        color: #aaa;
+        letter-spacing: 2px;
+    }
+    .scroll-line {
+        width: 40px;
+        height: 1px;
+        background: #ddd;
+        position: relative;
+        overflow: hidden;
+    }
+    .scroll-line::after {
+        content: '';
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #CC2222;
+        animation: slideLine 2s ease infinite;
+        animation-delay: 3s;
+    }
+    @keyframes slideLine {
+        0%   { left: -100%; }
+        100% { left: 100%; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET
+       ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+        .hero-inner { gap: 2rem; padding: 6rem 1.5rem 3rem; }
+        .small-img  { height: 120px; }
+        .skills-showcase { gap: 1rem; }
+        .skill-card { padding: 1rem; }
+        .skill-emoji { font-size: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE
+       ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+        .hero {
+            min-height: 100svh;
+            border-left: none;
+            border-top: 4px solid #CC2222;
+        }
+
+        .hero-inner {
+            grid-template-columns: 1fr;
+            padding: 5rem 1.25rem 4rem;
+            gap: 2rem;
+        }
+
+        /* hero-right: no opacity: 0 in base means this works cleanly */
+        .hero-right {
+            animation: none;
+            opacity: 1;
+        }
+
+        .hero-title    { font-size: clamp(2rem, 8vw, 2.8rem); min-height: auto; }
+        .hero-sub      { font-size: 14px; max-width: 100%; }
+        .hero-actions  { flex-direction: column; gap: 0.75rem; }
+
+        .btn-primary,
+        .btn-whatsapp  { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
+
+        .hero-img-main { aspect-ratio: unset; height: 280px; }
+        .hero-img      { object-position: top center; height: 100%; }
+
+        .hero-img-grid { grid-template-columns: 1fr 1fr; }
+        .small-img     { height: 100px; }
+
+        .trust-badges  { gap: 0.75rem; }
+        .trust-divider { display: none; }
+
+        .skills-showcase {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .skill-card {
+            padding: 1rem;
+            gap: 0.75rem;
+        }
+        .skill-emoji { font-size: 2rem; }
+        .skill-content h3 { font-size: 13px; }
+        .skill-content p { font-size: 11px; }
+
+        /* Scroll hint hidden cleanly via CSS — no JS override needed */
+        .scroll-hint   { display: none; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE
+       ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+        .hero-inner    { padding: 4.5rem 1rem 2rem; }
+        .hero-title    { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+        .hero-img-main { aspect-ratio: 1/1; }
+        .small-img     { height: 100px; }
+        .skills-showcase { gap: 0.75rem; }
+        .skill-card { padding: 0.85rem; }
+        .skill-emoji { font-size: 1.75rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — XSMALL
+       ══════════════════════════════════════════════ */
+    @media (max-width: 360px) {
+        .hero-inner    { padding: 4rem 0.75rem 1.5rem; }
+        .hero-img-grid { grid-template-columns: 1fr; }
+        .small-img     { height: 160px; }
+        .skill-card {
+            padding: 0.75rem;
+            gap: 0.5rem;
+        }
+        .skill-emoji { font-size: 1.5rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       REDUCED MOTION
+       ══════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+        .fade-in-up,
+        .hero-location { animation: none; opacity: 1; }
+        .scroll-line::after { animation: none; }
+        .skill-card { transition: none; }
+    }
+</style>
+
+<script>
+    // ── Wrapped in DOMContentLoaded so elements are guaranteed to exist ──
+    document.addEventListener('DOMContentLoaded', () => {
+        const line1Text = "Quality Timber.";
+        const line2Text = "Built to Last.";
+
+        const el1  = document.getElementById("line1")  as HTMLElement | null;
+        const el2  = document.getElementById("line2")  as HTMLElement | null;
+
+        // Null-guard — bail out if any element is missing
+        if (!el1 || !el2) return;
+
+        // Start with text hidden
+        el1.innerHTML = "";
+        el2.innerHTML = "";
+
+        /**
+         * splitReveal — animates characters in one by one using a
+         * clip-translate technique. Each character has a "top" span
+         * (dark, slides in) and a "bottom" span (red, hidden — reserved
+         * for a future hover-colour-shift effect).
+         */
+        function splitReveal(
+            el: HTMLElement,
+            text: string,
+            delay: number,
+            onDone: () => void
+        ) {
+            text.split("").forEach((char, i) => {
+                const wrapper = document.createElement("span");
+                wrapper.style.cssText = `
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                `;
+
+                const top    = document.createElement("span");
+                const bottom = document.createElement("span");
+
+                const baseTransition = `
+                    display: block;
+                    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                    transition-delay: ${delay + i * 40}ms;
+                `;
+
+                const displayChar = char === " " ? "\u00A0" : char;
+
+                top.textContent    = displayChar;
+                bottom.textContent = displayChar;
+
+                top.style.cssText = baseTransition + `
+                    transform: translateY(-105%);
+                    position: relative;
+                    color: #0A0A0A;
+                `;
+                bottom.style.cssText = baseTransition + `
+                    transform: translateY(105%);
+                    margin-top: -1.3em;
+                    color: #CC2222;
+                    opacity: 0;
+                    pointer-events: none;
+                `;
+
+                wrapper.appendChild(top);
+                wrapper.appendChild(bottom);
+                el.appendChild(wrapper);
+
+                // Double rAF ensures layout is settled before transition fires
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        top.style.transform = "translateY(0)";
+                    });
+                });
+            });
+
+            // Call onDone after the last character finishes animating
+            const totalTime = delay + text.length * 40 + 500;
+            setTimeout(onDone, totalTime);
+        }
+
+        // ── Sequence: location tag fades → line1 → line2 ──
+        setTimeout(() => {
+            splitReveal(el1, line1Text, 0, () => {
+                splitReveal(el2, line2Text, 100, () => {
+                    // Done
+                });
+            });
+        }, 400);
+    });
+</script>
