@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-
 <Layout title="About Us | Nepro Timbers">
     <!-- STEP 1: The Breadcrumb Hero -->
     <section class="about-hero" id="aboutHero">
@@ -186,46 +185,16 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <!-- STEP 8: Reservation & Footer Info -->
+    <!-- STEP 8: Reservation Bar (Kept on About Page) -->
     <section class="reservation-bar">
         <div class="container res-flex">
             <div class="res-text">
                 <h3>Order Your Supply</h3>
                 <p>Reserve your timber stock and enjoy premium selection without the wait.</p>
             </div>
-            <a href="https://wa.me/254712593434" class="btn-reserve">WHATSAPP ORDER NOW</a>
+            <a href="https://wa.me/254712593434" class="btn-reserve" target="_blank" rel="noopener noreferrer">WHATSAPP ORDER NOW</a>
         </div>
     </section>
-
-    <footer class="about-footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <div class="footer-logo">NEPRO</div>
-                <p class="address">📍 ADDRESS <br/> No. 45, Kimbo-Matangi Road, Kenya</p>
-                <p class="tel">📞 TEL <br/> +254 712 593 434</p>
-            </div>
-            <div class="footer-hours">
-                <h3>Working Hours</h3>
-                <ul>
-                    <li>Monday - Friday <span>8:00 AM - 6:00 PM</span></li>
-                    <li>Saturday <span>8:00 AM - 6:00 PM</span></li>
-                    <li>Sunday <span>Closed</span></li>
-                </ul>
-            </div>
-            <div class="footer-map">
-                <iframe
-                        src="https://www.google.com/maps/embed?pb=!4v1777811676685!6m8!1m7!1srQfz6NoRHP3yhMcoCc2FaA!2m2!1d-1.138285371836802!2d36.98192341624706!3f194.4047311351569!4f-1.5380794959904165!5f0.7820865974627469"
-                        width="100%"
-                        height="250"
-                        style="border:0; border-radius: 5px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Nepro Timbers - Kimbo-Matangi Road, Ruiru, Kenya">
-                </iframe>
-            </div>
-        </div>
-    </footer>
 </Layout>
 
 <style>
@@ -239,7 +208,7 @@ import Layout from '../layouts/Layout.astro';
         --white: #FAFAF7;
         --text-gray: #777;
         --orange-accent: #ff5e14;
-        --gold-primary: #1c1814; /* ✅ FIXED: Was #000000 */
+        --gold-primary: #1c1814;
         --gold-dark: #e0a144;
         --nav-dark: #1a1a1a;
     }
@@ -476,13 +445,10 @@ import Layout from '../layouts/Layout.astro';
     /* ========================================= */
     /*          3. WHY CHOOSE US                */
     /* ========================================= */
-    /* ========================================= */
-    /*          3. WHY CHOOSE US                */
-    /* ========================================= */
     .why-choose-us {
         padding: clamp(4rem, 8vw, 8rem) 0;
         background: linear-gradient(135deg, #0a0a0a 0%, #222222 100%);
-        overflow: hidden; /* Ensures nothing breaks the screen width */
+        overflow: hidden;
     }
 
     .why-choose-us .section-tag {
@@ -529,30 +495,29 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 10px;
     }
 
-    /* Desktop Layout (Standard Grid & Framed Photo) */
+    /* Desktop Layout */
     @media (min-width: 769px) {
         .choose-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Perfectly even 50/50 split */
-            gap: 4rem; /* Wide gap to let the text breathe */
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
         }
 
         .choose-content {
-            padding-right: 0; /* Removed the padding that squeezed the text */
+            padding-right: 0;
         }
 
-        /* Styles for a beautiful rectangular photo */
         .whychooseus-image-wrapper {
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Deep shadow for dark theme */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             width: 100%;
         }
 
         .whychooseus-image-wrapper .history-image {
-            width: 100%; /* Fills its half of the grid perfectly */
+            width: 100%;
             height: auto;
             max-height: 600px;
             object-fit: cover;
@@ -560,7 +525,6 @@ import Layout from '../layouts/Layout.astro';
             transition: transform 0.5s ease;
         }
 
-        /* Subtle zoom effect on hover */
         .whychooseus-image-wrapper:hover .history-image {
             transform: scale(1.03);
         }
@@ -744,19 +708,19 @@ import Layout from '../layouts/Layout.astro';
 
     .floating-img {
         width: 100%;
-        height: auto; /* ✅ Auto height maintains aspect ratio */
-        min-height: clamp(280px, 50vw, 400px); /* Ensures minimum height */
-        max-height: 400px; /* Caps maximum height */
-        object-fit: cover; /* ✅ Fills space without distortion */
+        height: auto;
+        min-height: clamp(280px, 50vw, 400px);
+        max-height: 400px;
+        object-fit: cover;
         border-radius: 5px;
         box-shadow: 15px 15px 0 var(--peach);
         display: block;
-        opacity: 0; /* ✅ Starts invisible for fade-in */
+        opacity: 0;
         transition: opacity 0.6s ease, transform 0.5s ease;
     }
 
     .meals-image:hover .floating-img {
-        transform: scale(1.02); /* ✅ Subtle hover zoom */
+        transform: scale(1.02);
     }
 
     .meals-text {
@@ -853,7 +817,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     /* ========================================= */
-    /*      8. RESERVATION & FOOTER             */
+    /*      8. RESERVATION BAR STYLES            */
     /* ========================================= */
     .reservation-bar {
         background: var(--peach);
@@ -908,113 +872,6 @@ import Layout from '../layouts/Layout.astro';
 
         .btn-reserve {
             width: auto;
-        }
-    }
-
-    .about-footer {
-        background: var(--deep-brown);
-        padding: clamp(3rem, 8vw, 6rem) 0;
-        color: var(--white);
-    }
-
-    .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-    }
-
-    .footer-logo {
-        font-size: clamp(1.6rem, 4vw, 2rem);
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        color: var(--white);
-    }
-
-    .footer-info p {
-        margin-bottom: 1.2rem;
-        font-size: clamp(0.85rem, 2vw, 0.9rem);
-        line-height: 1.6;
-        opacity: 0.85;
-    }
-
-    .footer-hours h3 {
-        color: var(--peach);
-        margin-bottom: 1.5rem;
-        font-size: clamp(1.1rem, 3vw, 1.3rem);
-    }
-
-    .footer-hours ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .footer-hours li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 8px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: clamp(0.8rem, 2vw, 0.9rem);
-        gap: 0.3rem;
-    }
-
-    .footer-map .map-placeholder {
-        background: #222;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #333;
-        color: #444;
-        border-radius: 5px;
-    }
-
-    @media (min-width: 769px) {
-        .footer-grid {
-            grid-template-columns: 1fr 1.5fr 1.5fr;
-            gap: 4rem;
-            text-align: left;
-        }
-
-        .footer-hours li {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-map .map-placeholder {
-            height: 250px;
-        }
-    }
-    .footer-map {
-        position: relative;
-        overflow: hidden;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .footer-map:hover {
-        box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.3),
-                0 0 20px rgba(241, 161, 114, 0.4);
-        transform: translateY(-2px);
-    }
-
-    .footer-map iframe {
-        width: 100%;
-        height: 200px; /* Mobile */
-        border: 0;
-        border-radius: 5px;
-        display: block;
-    }
-
-    @media (min-width: 769px) {
-        .footer-map iframe {
-            height: 250px; /* Desktop */
         }
     }
 </style>

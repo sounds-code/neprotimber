@@ -203,9 +203,64 @@ const categories = [
         ]
     },
 ];
+
+// --- SEO CONFIGURATION ---
+const pageDescription = "Explore our premium selection of structural timber (Cypress, Pine, Blue Gum), custom machined moldings, roofing sheets, cement, and construction hardware at NEPRO Timbers & Hardware.";
+
+// Generate JSON-LD Structured Data dynamically for the entire inventory catalogue
+const allItems = categories.flatMap(cat => cat.items.map(item => ({
+    "@type": "Product",
+    "name": item.name,
+    "description": item.desc,
+    "image": item.image ? new URL(item.image, Astro.url.origin).toString() : undefined,
+    "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "KES",
+        "price": "Contact for pricing"
+    }
+})));
+
+const jsonLdSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "HardwareStore",
+            "@id": `${Astro.url.origin}/#organization`,
+            "name": "NEPRO Timbers & Hardware",
+            "url": Astro.url.origin,
+            "description": "Premium timber yards and comprehensive construction hardware supplier.",
+            "telephone": "+254712593434",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "KE",
+                "addressRegion": "Nairobi"
+            }
+        },
+        {
+            "@type": "ItemPage",
+            "@id": Astro.url.href,
+            "url": Astro.url.href,
+            "name": "Products | NEPRO Timbers & Hardware",
+            "description": pageDescription,
+            "mainEntity": {
+                "@type": "ItemList",
+                "numberOfItems": allItems.length,
+                "itemListElement": allItems.map((prod, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "item": prod
+                }))
+            }
+        }
+    ]
+};
 ---
 
-<Layout title="Products | Nepro Timbers & Hardware">
+<Layout
+        title="Products | Nepro Timbers & Hardware"
+        description={pageDescription}
+        schema={jsonLdSchema}
+>
     <!-- NEW HERO - about-hero style -->
     <section class="about-hero">
         <div class="container hero-flex">
@@ -254,14 +309,14 @@ const categories = [
                                                         <div class="product-img">
                                                             <img
                                                                     src={item.image}
-                                                                    alt={item.name}
+                                                                    alt={`${item.name} supplied by NEPRO Timbers & Hardware`}
                                                                     class="product-photo"
                                                                     data-lightbox={item.image}
                                                                     data-product={item.name}
                                                                     loading="lazy"
                                                                     decoding="async"
                                                             />
-                                                            <button class="view-btn" data-lightbox={item.image} data-product={item.name} aria-label="View full image">
+                                                            <button class="view-btn" data-lightbox={item.image} data-product={item.name} aria-label={`View full image of ${item.name}`}>
                                                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                                     <circle cx="11" cy="11" r="8"></circle>
                                                                     <path d="m21 21-4.35-4.35"></path>
@@ -289,6 +344,7 @@ const categories = [
                                                     <a
                                                             href={`https://wa.me/254712593434?text=Hi Nepro Timbers, I'm interested in ${item.name}`}
                                                             target="_blank"
+                                                            rel="noopener noreferrer"
                                                             class="btn-enquire"
                                                     >
                                                         WhatsApp
@@ -308,7 +364,7 @@ const categories = [
     <div class="lightbox-modal" id="lightbox-modal">
         <div class="lightbox-content">
             <button class="lightbox-close" id="lightbox-close">✕</button>
-            <img id="lightbox-image" src="" alt="Product Image" class="lightbox-image" />
+            <img id="lightbox-image" src="" alt="Product Showcase Fullscreen Layout" class="lightbox-image" />
             <div class="lightbox-info">
                 <p id="lightbox-product-name"></p>
             </div>
@@ -320,7 +376,7 @@ const categories = [
         <div class="container">
             <h2>Can't find what you need?</h2>
             <p>We stock more than what's listed, from plumbing pipes to electrical fittings. Call or WhatsApp us and we'll sort you out.</p>
-            <a href="https://wa.me/254712593434?text=Hi Nepro Timbers, I need help finding a product" target="_blank" class="btn-whatsapp">
+            <a href="https://wa.me/254712593434?text=Hi Nepro Timbers, I need help finding a product" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.85L.057 23.5l5.797-1.524A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.886 9.886 0 01-5.031-1.378l-.36-.214-3.742.981.999-3.648-.235-.374A9.861 9.861 0 012.106 12C2.106 6.535 6.535 2.106 12 2.106c5.466 0 9.894 4.429 9.894 9.894 0 5.466-4.428 9.894-9.894 9.894z"/>
@@ -403,9 +459,9 @@ const categories = [
 </script>
 
 <style>
+    /* Custom layout-specific styles preserved accurately below */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-    /* About Hero Style - Match About page */
     .about-hero {
         background: linear-gradient(135deg, #231802 0%, #d5a166 100%);
         padding: 3rem 0;
@@ -420,16 +476,13 @@ const categories = [
     }
 
     .script-title {
-        //font-size: clamp(2.5rem, 8vw, 3rem);
         font-size: clamp(1.8rem, 5vw, 2.5rem);
-
         font-weight: 300;
         color: #FFF;
         margin: 0;
         letter-spacing: -1px;
         line-height: 1.1;
         transition: all 0.4s ease;
-
     }
 
     .breadcrumb {
@@ -460,7 +513,6 @@ const categories = [
         font-weight: 500;
     }
 
-    /* --- 3D POP TRANSITION --- */
     .hardware-3d-trigger {
         perspective: 1200px;
         overflow: visible;
@@ -489,7 +541,6 @@ const categories = [
         transform: translateY(0) rotateX(0deg);
     }
 
-    /* Divider Slide Effect */
     .slide-right-to-left {
         opacity: 0;
         transform: translateX(100px);
@@ -809,14 +860,8 @@ const categories = [
     }
 
     @keyframes slideUp {
-        from {
-            transform: translateY(40px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        from { transform: translateY(40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
 
     .category-section.hardware-theme {
@@ -888,11 +933,7 @@ const categories = [
         .product-img { height: 200px; }
         .product-photo:hover { transform: scale(1.05); }
 
-        .view-btn {
-            width: 42px;
-            height: 42px;
-            opacity: 0.8;
-        }
+        .view-btn { width: 42px; height: 42px; opacity: 0.8; }
 
         .product-info { padding: 1.25rem; }
         .product-info h3 { font-size: 15px; }
@@ -924,31 +965,19 @@ const categories = [
         .category-header h2 { font-size: 1.3rem; }
         .cat-desc { font-size: 13px; }
 
-        .products-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
+        .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
         .product-img { height: 180px; }
         .product-photo { padding: 0.5rem; }
 
-        .view-btn {
-            width: 38px;
-            height: 38px;
-            opacity: 0.85;
-        }
+        .view-btn { width: 38px; height: 38px; opacity: 0.85; }
 
         .product-info { padding: 1rem; gap: 0.5rem; }
         .product-info h3 { font-size: 14px; margin-bottom: 0.25rem; }
         .product-info p { font-size: 11px; line-height: 1.5; -webkit-line-clamp: 2; }
         .product-footer { gap: 0.5rem; padding-top: 0.5rem; flex-wrap: wrap; }
         .price { font-size: 10px; }
-        .btn-enquire {
-            padding: 6px 12px;
-            font-size: 10px;
-            flex: 1;
-            text-align: center;
-        }
+        .btn-enquire { padding: 6px 12px; font-size: 10px; flex: 1; text-align: center; }
 
         .specs-badges { gap: 0.25rem; padding: 0.4rem; }
         .spec-badge { font-size: 9px; padding: 2px 6px; }

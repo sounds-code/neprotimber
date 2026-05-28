@@ -7,7 +7,7 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "Quality timber and hardware in Ruiru Kimbo, Nairobi." } = Astro.props;
+const { title, description = "Quality timber and hardware in Ruiru Kimbo, Kiambu County. Expert cuts, fast delivery." } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,8 +15,60 @@ const { title, description = "Quality timber and hardware in Ruiru Kimbo, Nairob
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 	<meta name="description" content={description} />
+	<meta name="keywords" content="timber Kenya, hardware Ruiru, lumber Kiambu, building materials Nairobi, quality timber supplier" />
+	<meta name="author" content="Nepro Timbers & Hardware" />
+	<meta name="robots" content="index, follow" />
+
+	<link rel="canonical" href="https://neprotimber.co.ke" />
+
 	<title>{title} | Nepro Timbers & Hardware</title>
+
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content="https://neprotimber.co.ke/images/RealOwner.png" />
+	<meta property="og:url" content="https://neprotimber.co.ke" />
+	<meta property="og:type" content="business.business" />
+	<meta property="og:site_name" content="Nepro Timbers & Hardware" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="https://neprotimber.co.ke/images/RealOwner.png" />
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "LocalBusiness",
+			"name": "Nepro Timbers & Hardware",
+			"image": "https://neprotimber.co.ke/images/RealOwner.png",
+			"description": "Quality timber and hardware supplier in Ruiru Kimbo, Kiambu County with 10+ years of experience",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Ruiru Kimbo",
+				"addressLocality": "Kiambu",
+				"addressRegion": "Kiambu County",
+				"postalCode": "00232",
+				"addressCountry": "KE"
+			},
+			"telephone": "+254712593434",
+			"url": "https://neprotimber.co.ke",
+			"priceRange": "KES",
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+				"opens": "08:00",
+				"closes": "17:00"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.9",
+				"reviewCount": "50"
+			}
+		}
+	</script>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
@@ -26,33 +78,197 @@ const { title, description = "Quality timber and hardware in Ruiru Kimbo, Nairob
 	<slot />
 </main>
 
-<!-- FOOTER - ADD HERE -->
-<footer class="site-footer">
-	<p>Made by <span class="dave-credit">Dave</span></p>
+<footer class="about-footer">
+	<div class="container footer-grid">
+		<div class="footer-info">
+			<div class="footer-logo">NEPRO</div>
+			<p class="address">📍 ADDRESS <br/> No. 45, Kimbo-Matangi Road, Kenya</p>
+			<p class="tel">📞 TEL <br/> +254 712 593 434</p>
+		</div>
+		<div class="footer-hours">
+			<h3>Working Hours</h3>
+			<ul>
+				<li>Monday - Friday <span>8:00 AM - 6:00 PM</span></li>
+				<li>Saturday <span>8:00 AM - 6:00 PM</span></li>
+				<li>Sunday <span>Closed</span></li>
+			</ul>
+		</div>
+		<div class="footer-map">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!4v1777811676685!6m8!1m7!1srQfz6NoRHP3yhMcoCc2FaA!2m2!1d-1.138285371836802!2d36.98192341624706!3f194.4047311351569!4f-1.5380794959904165!5f0.7820865974627469"
+				width="100%"
+				height="250"
+				style="border:0; border-radius: 5px;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+				title="Nepro Timbers - Kimbo-Matangi Road, Ruiru, Kenya">
+			</iframe>
+		</div>
+	</div>
 </footer>
+
+<div class="site-footer">
+	<p>Built by <a href="#" class="dave-credit">DaveSounds</a></p>
+</div>
 
 </body>
 </html>
 
 <style is:global>
+	/* ========================================= */
+	/* GLOBAL THEME VARIABLES          */
+	/* ========================================= */
+	:root {
+		--peach: #f1a172;
+		--deep-brown: #1a1612;
+		--light-peach: #f5f0e8;
+		--white: #FAFAF7;
+		--text-gray: #777;
+		--orange-accent: #ff5e14;
+		--gold-primary: #1c1814;
+		--gold-dark: #e0a144;
+		--nav-dark: #1a1a1a;
+	}
+
 	* {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
+
 	body {
 		font-family: 'Inter', sans-serif;
 		background: #FAFAF7;
 		color: #0A0A0A;
 	}
 
-	/* FOOTER STYLES */
+	/* Shared Container Framework */
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+		width: 100%;
+	}
+
+	/* MASTER OVERRIDES FOR GLOBAL DARK FOOTER */
+	.about-footer {
+		background: var(--deep-brown) !important;
+		padding: clamp(4rem, 8vw, 6rem) 0;
+		color: #FFFFFF !important;
+		width: 100%;
+		display: block;
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3.5rem;
+		text-align: center;
+	}
+
+	.footer-logo {
+		font-size: clamp(1.8rem, 4vw, 2.2rem);
+		font-weight: 800;
+		margin-bottom: 1.5rem;
+		color: #FFFFFF !important;
+		letter-spacing: 1px;
+	}
+
+	.footer-info p {
+		margin-bottom: 1.2rem;
+		font-size: clamp(0.9rem, 2vw, 1rem);
+		line-height: 1.7;
+		opacity: 0.9;
+		color: #FFFFFF !important;
+	}
+
+	.footer-info p.address,
+	.footer-info p.tel {
+		line-height: 1.8;
+	}
+
+	.footer-hours h3 {
+		color: var(--peach) !important;
+		margin-bottom: 1.7rem;
+		font-size: clamp(1.2rem, 3vw, 1.4rem);
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+
+	.footer-hours ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-hours li {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 12px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		font-size: clamp(0.85rem, 2vw, 0.95rem);
+		gap: 0.4rem;
+		color: #FFFFFF !important;
+	}
+
+	.footer-hours li span {
+		color: rgba(255, 255, 255, 0.75) !important;
+	}
+
+	@media (min-width: 769px) {
+		.footer-grid {
+			grid-template-columns: 1fr 1.3fr 1.5fr;
+			gap: 4rem;
+			text-align: left;
+		}
+
+		.footer-hours li {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: 14px 0;
+		}
+	}
+
+	.footer-map {
+		position: relative;
+		overflow: hidden;
+		border-radius: 6px;
+		transition: all 0.3s ease;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+	}
+
+	.footer-map:hover {
+		box-shadow:
+			0 12px 30px rgba(0, 0, 0, 0.4),
+			0 0 20px rgba(241, 161, 114, 0.25);
+		transform: translateY(-3px);
+	}
+
+	.footer-map iframe {
+		width: 100%;
+		height: 220px;
+		border: 0;
+		border-radius: 6px;
+		display: block;
+	}
+
+	@media (min-width: 769px) {
+		.footer-map iframe {
+			height: 250px;
+		}
+	}
+
+	/* FLOATING CREDIT STYLES */
 	.site-footer {
 		position: fixed;
 		bottom: 1.5rem;
 		right: 1.5rem;
 		font-size: 11px;
-		color: #ff0202;
+		color: #666;
 		letter-spacing: 0.5px;
 		z-index: 100;
 	}
@@ -62,7 +278,7 @@ const { title, description = "Quality timber and hardware in Ruiru Kimbo, Nairob
 	}
 
 	.dave-credit {
-		color: #ffffff;
+		color: #C9A96E;
 		font-weight: 600;
 		text-decoration: none;
 	}

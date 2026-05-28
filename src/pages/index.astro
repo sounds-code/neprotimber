@@ -2,10 +2,12 @@
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import AboutWork from "../components/AboutWork.astro";
+
+const title = "Quality Timber & Hardware in Ruiru Kimbo | Nepro Timbers Kenya";
+const description = "Premium timber supplier in Kiambu County. 10+ years trusted, expert cuts, fast delivery. Order now via WhatsApp +254712593434";
 ---
 
-<Layout title="Home">
+<Layout title={title} description={description}>
 	<Hero />
 	<AboutWork />
-
 </Layout>
